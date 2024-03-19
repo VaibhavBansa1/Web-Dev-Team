@@ -10,6 +10,10 @@
     <h1>
         Login for Faculty
     </h1>
+     
+    <a href="studentdetail.php">
+        after login
+    </a>
 
 </body>
 </html>
