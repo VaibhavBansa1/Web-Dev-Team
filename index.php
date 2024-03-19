@@ -9,7 +9,7 @@
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0;
+            /* padding: 0; */
             background-color: #f0f0f0;
         }
 
@@ -48,7 +48,7 @@
                 <a href="">Home</a>
             </li>
             <li>
-                <a href="">Login</a>
+                <a href="login.php">Login</a>
             </li>
             <li>
                 <a href="">About Us</a>
