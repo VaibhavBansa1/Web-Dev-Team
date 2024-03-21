@@ -12,7 +12,7 @@
         $con = new mysqli($host, $user, $pass, $dbname, $port, $socket)
         or die ('Could not connect to the database server' . mysqli_connect_error());
         
-        $sql = "SELECT id, password FROM student WHERE password = 'poly807697' AND id = '22BRACS04';";
+        $sql = "SELECT id, password FROM student WHERE password = '$password' AND id = '$id';";
         $result = $con->query($sql)->fetch_assoc();
         echo $result['password'], $password;
         if (($result['password'] == $password) && ($result['id'] == $id) ){
