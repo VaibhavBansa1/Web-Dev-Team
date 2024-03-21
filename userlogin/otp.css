@@ -1,0 +1,67 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body {
+    font-family: "Roboto", sans-serif;
+    background: #f5f5f5;
+}
+.otp-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 450px;
+    background: #fff;
+    padding: 20px 30px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+}
+.otp-form .title {
+    font-family:"Montserrat", sans-serif;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 900;
+    margin: 20px 0px 30px;
+    color: #111;
+}
+.otp-form .input {
+    margin: 10px 0px;
+}
+.otp-form .input label,
+.otp-form .otp-verify label {
+    display:block;
+    font-size: 15px;
+    font-weight: 800;
+    color: #111;
+    margin-bottom: 5px;
+}
+.otp-form .input input {
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+    border: 1px solid #888;
+}
+.otp-form .btn {
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    text-transform: uppercase;
+    background: #2c73ab;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 6px;
+}
+.otp-form .otp-verify {
+    margin-top: 20px;
+}
+.otp-form .otp-verify input{
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+    border: 1px solid #888;
+}
