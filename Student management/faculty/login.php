@@ -2,11 +2,12 @@
     if(isset($_POST['id']) && isset($_POST['password']) && isset($_POST['submit'])){
         $id = $_POST['id'] ;
         $password = $_POST['password'];
+
         $host="localhost";
         $port=3306;
         $socket="";
         $user="root";
-        $pass="Bansal@police1";
+        $pass="";
         $dbname="college";
         
         $con = new mysqli($host, $user, $pass, $dbname, $port, $socket)
@@ -15,7 +16,7 @@
         $sql = "SELECT id, password FROM student WHERE password = '$password' AND id = '$id';";
         $result = $con->query($sql)->fetch_assoc();
         echo $result['password'], $password;
-        if (($result['password'] == $password) && ($result['id'] == $id) ){
+        if (($result['password'] === $password) && ($result['id'] === $id) ){
             header("location:studentdetail.php");
         }
         else{
