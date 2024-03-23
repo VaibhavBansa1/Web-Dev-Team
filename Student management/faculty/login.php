@@ -15,7 +15,7 @@
         
         $sql = "SELECT id, password FROM student WHERE password = '$password' AND id = '$id';";
         $result = $con->query($sql)->fetch_assoc();
-        
+        echo $result['password'], $password;
         if (($result['password'] === $password) && ($result['id'] === $id) ){
             header("location:studentdetail.php");
         }
