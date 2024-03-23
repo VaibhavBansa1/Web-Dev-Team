@@ -3,7 +3,7 @@
     //     header("location:studentdetail.php");
     // }
     if(isset($_GET['fail']) && $_GET['fail'] == 1){
-        echo "Wrong password or wrong id";
+        echo "<script>alert('Wrong password or wrong id')</script>";
     }
 ?>
 <!DOCTYPE html>
