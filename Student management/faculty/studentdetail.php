@@ -14,7 +14,6 @@
 <body>
     <nav>
         <h3>
-
             search by:
         </h3>
     </nav>
