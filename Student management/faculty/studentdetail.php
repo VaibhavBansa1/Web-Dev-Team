@@ -77,7 +77,7 @@
         </tbody>
     </table>
     <?php
-        echo "";
+        include('logout_btn.php');
     ?>
 </body>
 </html>
