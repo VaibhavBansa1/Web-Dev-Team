@@ -32,7 +32,7 @@
                     <input type="text" id="username" name="id" placeholder="Enter Username...." required>
                 </div>
                 <div class="input">
-                    <label for="password">password</label>
+                    <label for="password">Password</label>
                     <input type="password" id="password" name="password" placeholder="Enter Password...." required>
                 </div>
                 <!-- <div class="captcha"> -->
