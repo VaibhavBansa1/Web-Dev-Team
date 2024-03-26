@@ -1,13 +1,20 @@
 <?php
     if(isset($_POST['id']) && isset($_POST['password']) && isset($_POST['submit'])){
         $id = $_POST['id'] ;
-        $password = $_POST['password'];
+        $pass = $_POST['password'];
         // connection is in conn.php
         include("conn.php");
-        $sql = "SELECT id, password FROM faculty WHERE password = '$password' AND id = '$id';";
+        $sql = "SELECT id, password FROM faculty WHERE password = '$pass' AND id = '$id';";
         $result = $conn->query($sql)->fetch_assoc();
-        echo $result['password'], $password;
-        if (($result['password'] === $password) && ($result['id'] === $id) ){
+        if (($result['password'] === $pass) && ($result['id'] === $id) ){
+            $charset = "QAZWSXEDCRFVTGBYHNUJMIKLOPqwertyuiopasdfghjklmnbvcxz1234567890";
+            $session_id = ""; 
+            for ($i = 0; $i < 25 ; $i++){
+                $rand_int = rand(0,61) ;
+                $session_id = $session_id . $charset[$rand_int] ;
+            }
+            session_start();
+            $_SESSION['id'] = $session_id;
             header("location:studentdetail.php");
         }
         else{
@@ -16,7 +23,7 @@
 
         $conn->close();
     }
-    else{
+    else {
         header("Location:index.php");
     }
 ?>

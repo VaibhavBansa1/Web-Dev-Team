@@ -2,8 +2,12 @@
     // if(isset($_SESSION['id'])){
     //     header("location:studentdetail.php");
     // }
-    if(isset($_GET['fail']) && $_GET['fail'] == 1){
+    if(isset($_GET['fail']) && $_GET['fail'] == 1) {
         echo "<script>alert('Wrong password or wrong id')</script>";
+    }
+    session_start();
+    if(isset($_SESSION['id'])){
+        header("location:studentdetail.php");
     }
 ?>
 <!DOCTYPE html>
