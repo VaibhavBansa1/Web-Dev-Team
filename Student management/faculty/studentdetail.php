@@ -47,7 +47,10 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
+            <?php
+            include('conn.php');
+            
+            echo "<tr>
                 <td>
                     22bracs04
                 </td>
@@ -72,7 +75,8 @@
                 <td>
                     4th
                 </td>
-            </tr>
+            </tr>"
+            ?>
         </tbody>
     </table>
     <?php
