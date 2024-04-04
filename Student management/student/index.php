@@ -6,8 +6,10 @@
         echo "<script>alert('Wrong password or wrong id')</script>";
     }
     session_start();
-    if(isset($_SESSION['id']) && $_SESSION['user'] == 'student'){
-        header("location:profile.php");
+    if(isset($_SESSION['id']) && isset($_SESSION['user'])){
+        if($_SESSION['user'] == 'student') {
+            header("location:studentdetail.php");
+        }
     }
 ?>
 <!DOCTYPE html>
