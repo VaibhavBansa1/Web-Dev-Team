@@ -1,6 +1,28 @@
 drop database college;
 create database college;
 use college;
+create table branches(
+	id int not null primary key,
+	branch_name varchar(20) not null unique
+);
+create table clg_session(
+	id int not null primary key,
+	session_name varchar(10) not null unique
+);
+create table gender(
+    id char(1) primary key check(id IN ('M', 'F', 'O')),
+    gender varchar(10) not null unique check(gender IN ('Male', 'Female', 'Other'))
+);
+create table session_manage(
+	id char(25) primary key not null ,
+	user varchar(7), -- type of user
+	u_id varchar(15)
+);
+
+insert into gender values ('M','Male'),
+						  ('F','Female'),
+						  ('O','Other');
+
 create table student(
 	id varchar(15) primary key not null, -- roll no
 	std_name varchar(50) not null check (length(std_name) > 0),
@@ -9,12 +31,13 @@ create table student(
 	phone_no varchar(16) not null unique,
 	guardian_phone_no varchar(16) not null unique,
 	dob date not null,
-	gender varchar(10) CHECK (gender IN ('Male', 'Female', 'Other')),
 	password varchar(20) not null check (length(password) >= 8),
 	blood_grp varchar(3),
 	address varchar(256) not null,
+	gender_id char(1) primary key check(id IN ('M', 'F', 'O')),,
 	branch_id int not null check (branch_id > 0), -- this student table will be the child of branch table
 	session_id int not null check (session_id > 0), --  this session table will be the child of branch table
+	foreign key (gender_id) references gender(id),
 	foreign key (branch_id) references branches(id),
 	foreign key (session_id) references clg_session(id)
 );
@@ -25,20 +48,13 @@ create table faculty(
 	gmail varchar(50) not null check (length(gmail) > 10) unique, -- only gmail 🗿🗿
 	phone_no varchar(16) not null unique,
 	alt_phone_no varchar(16) not null unique,
-	gender varchar(10) CHECK (gender IN ('Male', 'Female', 'Other')),
 	blood_grp varchar(3),
 	address varchar(256) not null,
 	dob date not null,
+	gender_id char(1) primary key check(id IN ('M', 'F', 'O')),,
 	branch_id int not null check (branch_id > 0), -- this student table will be the child of branch table
+	foreign key (gender_id) references gender(id),
 	foreign key (branch_id) references branches(id)
-);
-create table branches(
-	id int not null primary key,
-	branch_name varchar(20) not null unique
-);
-create table clg_session(
-	id int not null primary key,
-	session_name varchar(10) not null unique
 );
 -- create table std_photo();
 -- create table faculty_photo();
@@ -59,6 +75,7 @@ insert into student(
 	guardian_phone_no, dob, gender, password, blood_grp,
 	address, branch_id, session_id
 ) 
+
 values('22BRACS01','student1','guardian1','student1@gmail.com','+91 789 456 1231','+91 789 456 1231','2006-01-03','Male',"password",'B+','address blabla bla bla',1,2),
 	  ('22BRACS02','student2','guardian2','student2@gmail.com','+91 789 456 1232','+91 789 456 1232','2006-01-03','Male',"password",'B+','address blabla bla bla',1,2),
 	  ('22BRACS03','student3','guardian3','student3@gmail.com','+91 789 456 1233','+91 789 456 1233','2006-01-03','Male',"password",'B+','address blabla bla bla',1,1),
