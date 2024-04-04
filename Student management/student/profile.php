@@ -9,7 +9,13 @@
     <h1>
 
         Student personal profile
-        <?php include('logout_btn.php');?>
+        <?php
+            include('logout_btn.php');
+            session_start();
+            if(!(isset($_SESSION['id']) && $_SESSION['user'] == 'student')){
+                header("location:index.php");
+            }
+        ?>
     </h1>
 </body>
 </html>

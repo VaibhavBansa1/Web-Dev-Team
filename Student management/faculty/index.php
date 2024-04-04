@@ -6,7 +6,7 @@
         echo "<script>alert('Wrong password or wrong id')</script>";
     }
     session_start();
-    if(isset($_SESSION['id'])){
+    if(isset($_SESSION['id']) && $_SESSION['user'] == 'faculty'){
         header("location:studentdetail.php");
     }
 ?>

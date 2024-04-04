@@ -68,6 +68,7 @@ values('22BRACS01','student1','guardian1','student1@gmail.com','+91 789 456 1231
 SELECT * FROM  student;
 SELECT * FROM  student ;
 SELECT * FROM  faculty limit 0,5;
+SELECT * FROM  faculty;
 
 select * from student std
  inner join branches bra on  bra.id = std.branch_id 
