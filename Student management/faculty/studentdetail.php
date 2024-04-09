@@ -58,7 +58,16 @@
         <tbody>
             <?php
             include('conn.php');
-            $sql = "SELECT * from student std
+            $sql = "SELECT std.id,
+                std_name,
+                guardian_name,
+                gmail,
+                phone_no,
+                guardian_phone_no,
+                gender,
+                blood_grp,
+                branch_name,
+                session_name from student std
             inner join branches bra on  bra.id = std.branch_id 
             inner join clg_session cls on cls.id = std.session_id
             inner join gender g on g.id = std.gender_id
@@ -71,6 +80,7 @@
             }
             
             while($row = $result->fetch_assoc()) {
+                
                 echo "<tr>
                     <td>
                         ".$row['id']."
