@@ -1,6 +1,6 @@
 <?php
     include('conn.php');
-    echo '<br>' . $id = $_POST['rollname'];
+    echo '<br>' . $id = $_POST['rollno'];
     echo '<br>' . $std_name = $_POST['s_name'];
     echo '<br>' . $guardian_name = $_POST['g_name'];
     echo '<br>' . $gmail = $_POST['gmail'];

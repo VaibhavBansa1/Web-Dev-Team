@@ -10,19 +10,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
     <?php
         include('../main_nav.php');
     ?>
 
-    <nav>
         <h3>
             search by:
         </h3>
-    </nav>
-    <table>
-        <thead>
+    <table class="table table-light table-striped-columns table table-hover">
+        <thead class="table-success">
             <tr>
                 <th>
                     Roll No.
@@ -31,55 +30,80 @@
                     Name
                 </th>
                 <th>
-                    Phone No. 
+                    Guardian Name
                 </th>
                 <th>
-                    Father Name
+                    Gmail
                 </th>
                 <th>
-                    Blood  Group
+                    Phone No.
                 </th>
                 <th>
-                    Address
+                    Guardian Phone No.
+                </th>
+                <th>
+                    Gender
+                </th>
+                <th>
+                    Blood Group
                 </th>
                 <th>
                     Branch
                 </th>
                 <th>
-                    Sem
+                    Session
                 </th>
             </tr>
         </thead>
         <tbody>
             <?php
             include('conn.php');
+            $sql = "SELECT * from student std
+            inner join branches bra on  bra.id = std.branch_id 
+            inner join clg_session cls on cls.id = std.session_id
+            inner join gender g on g.id = std.gender_id
+            inner join users on users.id = std.user_id;
+           ";
+            $result = $conn->query($sql);
+            if(!$result)
+            {
+                die("Invalid query: " .  $conn->error);
+            }
             
-            echo "<tr>
-                <td>
-                    22bracs04
-                </td>
-                <td>
-                    Vaibhav Bansal
-                </td>
-                <td>
-                    97131 45866
-                </td>
-                <td>
-                    Pawan Kumar Bansal
-                </td>
-                <td>
-                    B+
-                </td>
-                <td>
-                    opposite police station
-                </td>
-                <td>
-                    CSE
-                </td>
-                <td>
-                    4th
-                </td>
-            </tr>"
+            while($row = $result->fetch_assoc()) {
+                echo "<tr>
+                    <td>
+                        ".$row['id']."
+                    </td>
+                    <td>
+                        ".$row['std_name']."
+                    </td>
+                    <td>
+                        ".$row['guardian_name']."
+                    </td>
+                    <td>
+                        ".$row['gmail']."
+                    </td>
+                    <td>
+                        ".$row['phone_no']."
+                    </td>
+                    <td>
+                        ".$row['guardian_phone_no']."
+                    </td>
+                    <td>
+                        ".$row['gender']."
+                    </td>
+                    <td>
+                        ".$row['blood_grp']."
+                    </td>
+                    <td>
+                        ".$row['branch_name']."
+                    </td>
+                    <td>
+                        ".$row['session_name']."
+                    </td>
+                </tr>";
+            }
             ?>
         </tbody>
     </table>

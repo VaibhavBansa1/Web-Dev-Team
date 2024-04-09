@@ -93,8 +93,8 @@ if (!(isset($_SESSION['id']) && $_SESSION['user'] == 'faculty')) {
 				</select>
 			</div>
 			<div class="col-md-6">
-				<label for="Rollname" class="form-label">Roll number</label>
-				<input type="text" class="form-control" id="Rollname" name="rollname" required>
+				<label for="Rollno" class="form-label">Roll number</label>
+				<input type="text" class="form-control" id="Rollno" name="rollno" required>
 			</div>
 			<div class="col-md-6">
 				<label for="Password" class="form-label">Password</label>
