@@ -12,6 +12,10 @@
     <title>Document</title>
 </head>
 <body>
+    <?php
+        include('../main_nav.php');
+    ?>
+
     <nav>
         <h3>
             search by:

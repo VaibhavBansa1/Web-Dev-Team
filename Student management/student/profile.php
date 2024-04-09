@@ -6,8 +6,11 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>
+    <?php
+        include('../main_nav.php');
+    ?>
 
+    <h1>
         Student personal profile
         <?php
             include('logout_btn.php');

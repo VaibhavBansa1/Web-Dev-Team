@@ -23,6 +23,9 @@
         <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script> -->
     </head>
     <body>
+    <?php
+        include('../main_nav.php');
+    ?>
         <div class="login-form">
             <div class="title">
                 Student Login

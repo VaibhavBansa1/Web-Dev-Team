@@ -15,97 +15,90 @@ if (!(isset($_SESSION['id']) && $_SESSION['user'] == 'faculty')) {
 </head>
 
 <body class="bg-success-subtle">
+	<?php
+		include('../main_nav.php');
+    ?>
+
 	<h1 class="text-center"><u>Add Student</u></h1><br>
 	<div>
 
-		<form class="row g-3 ms-5 me-5 mt-3 mb-5 border border-4 border-black fw-semibold">
+		<form class="row g-3 ms-5 me-5 mt-3 mb-5 border border-4 border-black fw-semibold" action="add_this_student.php" method="post">
 			<div class="col-md-6">
 				<label for="S_Name" class="form-label">Student Name</label>
-				<input type="text" class="form-control" id="S_Name">
+				<input type="text" class="form-control" id="S_Name" name="s_name" required>
 			</div>
 			<div class="col-md-6">
 				<label for="G_Name" class="form-label">Guardian Name</label>
-				<input type="text" class="form-control" id="G_Name">
+				<input type="text" class="form-control" id="G_Name" name="g_name" required>
 			</div>
 			<div class="col-md-4">
-				<label for="Email" class="form-label">Email</label>
-				<input type="email" class="form-control" id="Email" placeholder="Enter email">
+				<label for="Gmail" class="form-label">Gmail</label>
+				<input type="email" class="form-control" id="Gmail" placeholder="Enter Gmail" name="gmail" required>
 			</div>
 			<div class="col-md-4">
 				<label for="Mobile" class="form-label">Mobile number</label>
-				<input type="tel" class="form-control" id="Mobile">
+				<input type="tel" class="form-control" id="Mobile" name="mobile" required>
 			</div>
 			<div class="col-md-4">
 				<label for="G_Mobile" class="form-label">Guardian Mobile number</label>
-				<input type="tel" class="form-control" id="Mobile">
+				<input type="tel" class="form-control" id="G_Mobile" name="g_mobile" required>
 			</div>
 			<div class="col-md-4">
 				<label for="DOB" class="form-label">DOB</label>
-				<input type="date" class="form-control" id="Email">
+				<input type="date" class="form-control" id="DOB" name="dob" required>
 			</div>
 			<div class="col-md-4">
 				<label for="Gender" class="form-label">Gender</label>
-				<select id="inputState" class="form-select">
+				<select id="Gender" class="form-select" name="gender">
 					<option selected>Choose...</option>
-					<option>Male</option>
-					<option>Female</option>
-					<option>Other</option>
+					<option value="M">Male</option>
+					<option value="F">Female</option>
+					<option value="O">Other</option>
 				</select>
 			</div>
 			<div class="col-md-4">
 				<label for="Blood_Group" class="form-label">Blood Group</label>
-				<select id="Blood_Group" class="form-select">
+				<select id="Blood_Group" class="form-select" name="blood_group">
 					<option selected>Choose...</option>
-					<option>A+</option>
-					<option>A-</option>
-					<option>B+</option>
-					<option>B-</option>
-					<option>AB+</option>
-					<option>AB-</option>
-					<option>O+</option>
-					<option>O-</option>
+					<option value="A+">A+</option>
+					<option value="A-">A-</option>
+					<option value="B+">B+</option>
+					<option value="B-">B-</option>
+					<option value="AB+">AB+</option>
+					<option value="AB-">AB-</option>
+					<option value="O+">O+</option>
+					<option value="O-">O-</option>
 				</select>
 			</div>
 			<div class="col-12">
 				<label for="Address" class="form-label">Address</label>
-				<input type="text" class="form-control" id="Address" placeholder="Enter address">
+				<input type="text" class="form-control" id="Address" placeholder="Enter address" name="address" required>
 			</div>
 			<div class="col-md-6">
 				<label for="Branch" class="form-label">Branch</label>
-				<select id="Branch" class="form-select">
+				<select id="Branch" class="form-select" name="branch">
 					<option selected>Choose...</option>
-					<option>Computer Science & Engineering(CSE)</option>
-					<option>Information Technology(IT)</option>
-					<option>Electrical Engineering(EE)</option>
-					<option>Mechanical Engieering(ME)</option>
-					<option>Civel Engineering(CE)</option>
-					<option>Hotel Management(HMCT)</option>
-					<option>Textile Engineering(TE)</option>
+					<option value="1">Computer Science & Engineering(CSE)</option>
+					<option value="2">Electrical Engineering(EE)</option>
+					<option value="3">Information Technology(IT)</option>
 				</select>
 			</div>
 			<div class="col-md-6">
-				<label for="Branch" class="form-label">Session</label>
-				<select id="Branch" class="form-select">
+				<label for="Session" class="form-label">Session</label>
+				<select id="Session" class="form-select" name="session">
 					<option selected>Choose...</option>
-					<option>2021-2024</option>
-					<option>2022-2025</option>
-					<option>2023-2026</option>
-					<option>2024-2027</option>
-					<option>2025-2028</option>
-					<option>2026-2029</option>
-					<option>2027-2030</option>
-					<option>2028-2031</option>
-					<option>2029-2032</option>
-					<option>2030-2033</option>
+					<option value="1">2021-2024</option>
+					<option value="2">2022-2025</option>
+					<option value="3">2023-2026</option>
 				</select>
 			</div>
 			<div class="col-md-6">
-				<label for="Username" class="form-label">Roll number</label>
-				<input type="text" class="form-control" id="Username">
+				<label for="Rollname" class="form-label">Roll number</label>
+				<input type="text" class="form-control" id="Rollname" name="rollname" required>
 			</div>
 			<div class="col-md-6">
 				<label for="Password" class="form-label">Password</label>
-				<input type="password" class="form-control" id="Password">
+				<input type="password" class="form-control" id="Password" name="password" required>
 			</div>
 			<div class="col-12">
 				<button type="submit" class="btn btn-primary d-grid gap-2 col-6 mx-auto mb-3 mt-3">Add Student</button>

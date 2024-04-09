@@ -25,15 +25,10 @@
     </style>
 </head>
 <body>
-    <li>
-        <a href="./admin/">Login as Admin</a>
-    </li>
-    <li>
-        <a href="./faculty/">Login as Faculty</a>
-    </li>
-    <li>
-        <a href="./student/">Login as Student</a>
-    </li>
+    <?php
+        include('../main_nav.php');
+    ?>
+
 
 </body>
 </html>
