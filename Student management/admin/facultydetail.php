@@ -1,6 +1,6 @@
 <?php
     session_start();
-    if(!(isset($_SESSION['id']) && $_SESSION['user'] == 'faculty')){
+    if(!(isset($_SESSION['id']) && $_SESSION['user'] == 'admin')){
         header("location:index.php");
     }
 ?>
@@ -57,7 +57,7 @@
         </thead>
         <tbody>
             <?php
-            include('conn.php');
+            include('../conn.php');
             $sql = "SELECT std.id,
                 std_name,
                 guardian_name,

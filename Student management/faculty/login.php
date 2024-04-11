@@ -3,7 +3,7 @@
         $id = $_POST['id'] ;
         $pass = $_POST['password'];
         // connection is in conn.php
-        include("conn.php");
+        include("../conn.php");
         $sql = "SELECT id, password FROM faculty WHERE password = '$pass' AND id = '$id';";
         $result = $conn->query($sql)->fetch_assoc();
         if (($result['password'] === $pass) && ($result['id'] === $id) ){
@@ -16,7 +16,7 @@
             session_start();
             $_SESSION['id'] = $session_id;
             $_SESSION['user'] = 'faculty';
-            header("location:studentdetail.php");
+            header("location:students_detail.php");
         }
         else{
             header("location:index.php?fail=".true);

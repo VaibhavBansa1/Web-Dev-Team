@@ -1,6 +1,6 @@
 <?php
     // if(isset($_SESSION['id'])){
-    //     header("location:studentdetail.php");
+    //     header("location:students_detail.php");
     // }
     if(isset($_GET['fail']) && $_GET['fail'] == 1) {
         echo "<script>alert('Wrong password or wrong id')</script>";
@@ -8,7 +8,7 @@
     session_start();
     if(isset($_SESSION['id']) && isset($_SESSION['user'])){
         if($_SESSION['user'] == 'faculty') {
-            header("location:studentdetail.php");
+            header("location:students_detail.php");
         }
     }
 ?>

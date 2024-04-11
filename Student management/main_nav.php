@@ -19,16 +19,15 @@
                             login as
                         </a>
                         <ul class="dropdown-menu" style="background-color: #99d2e5;">
-                            <li><a class="dropdown-item" href="../student/">Student login</a></li>
-                            <li><a class="dropdown-item" href="../faculty/">Faculty login</a></li>
-                            <li><a class="dropdown-item" href="../admin/">Admin login</a></li>
+                            <li><a class="dropdown-item" href="../student/">Student</a></li>
+                            <li><a class="dropdown-item" href="../faculty/">Faculty</a></li>
+                            <li><a class="dropdown-item" href="../admin/">Admin</a></li>
                         </ul>
                     </li>
                     <?php
-                    // echo (session_status());
+                    session_status();
                     if(isset($_SESSION['id'])) {
                         include('logout_btn.php');
-
                     }
                     ?>
                 </ul>

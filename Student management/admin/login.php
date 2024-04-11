@@ -3,8 +3,8 @@
         $id = $_POST['id'];
         $pass = $_POST['password'];
         // connection is in conn.php
-        include("../conn.php");
-        $sql = "SELECT id, password FROM student WHERE password = '$pass' AND id = '$id';";
+        include("../admin_conn.php");
+        $sql = "SELECT id, password FROM admin WHERE password = '$pass' AND id = '$id';";
         $result = $conn->query($sql)->fetch_assoc();
         if (($result['password'] === $pass) && ($result['id'] === $id) ){
             $charset = "QAZWSXEDCRFVTGBYHNUJMIKLOPqwertyuiopasdfghjklmnbvcxz1234567890";
@@ -15,7 +15,7 @@
             }
             session_start();
             $_SESSION['id'] = $session_id;
-            $_SESSION['user'] = 'student';
+            $_SESSION['user'] = 'admin';
             header("location:profile.php");
         }
         else{
