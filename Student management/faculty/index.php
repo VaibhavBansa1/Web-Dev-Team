@@ -58,7 +58,7 @@
                     <!-- </div> -->
                 <!-- </div> -->
                 <div class="submit-b">
-                    <button id="login-b" class="loginb" type="submit" name="submit" value="submit">Verify User</button>
+                    <button id="login-b" class="loginb" type="submit" name="submit" value="submit">Login</button>
                 </div>
             </form>
         </div>
