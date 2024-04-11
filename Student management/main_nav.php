@@ -3,8 +3,8 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg bg-success" style="z-index:100">
-        <div class="container bg-success">
+    <nav class="navbar navbar-expand-lg" style="z-index:100;background-color: #2c73ab;">
+        <div class="container" style="background-color: #2c73ab;">
             <!-- <a class="navbar-brand text-primary" href="#">Dr.BR.Ambedkar polytechnic college Gwalior</a> -->
             <button class="navbar-toggler bg-primary bg-gradient" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -18,7 +18,7 @@
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             login as
                         </a>
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu" style="background-color: #99d2e5;">
                             <li><a class="dropdown-item" href="../student/">Student login</a></li>
                             <li><a class="dropdown-item" href="../faculty/">Faculty login</a></li>
                             <li><a class="dropdown-item" href="../admin/">Admin login</a></li>
