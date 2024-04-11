@@ -8,7 +8,7 @@
     session_start();
     if(isset($_SESSION['id']) && isset($_SESSION['user'])){
         if($_SESSION['user'] == 'student') {
-            header("location:studentdetail.php");
+            header("location:profile.php");
         }
     }
 ?>

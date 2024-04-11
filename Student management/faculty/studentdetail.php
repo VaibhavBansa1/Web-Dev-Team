@@ -117,8 +117,5 @@
             ?>
         </tbody>
     </table>
-    <?php
-        include('logout_btn.php');
-    ?>
 </body>
 </html>
