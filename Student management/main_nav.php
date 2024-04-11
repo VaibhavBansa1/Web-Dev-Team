@@ -26,7 +26,7 @@
                     </li>
                     <?php
                     // echo (session_status());
-                    if(session_status()) {
+                    if(isset($_SESSION['id'])) {
                         include('logout_btn.php');
 
                     }
