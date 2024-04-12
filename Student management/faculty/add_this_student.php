@@ -1,4 +1,8 @@
 <?php
+    session_start();
+    if (!(isset($_SESSION['id']) && $_SESSION['user'] == 'faculty')) {
+        header("location:index.php");
+    }
     if (isset($_POST['rollno']) &&
     isset($_POST['s_name']) &&
     isset($_POST['g_name']) &&
