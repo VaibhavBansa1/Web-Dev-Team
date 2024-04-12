@@ -16,10 +16,65 @@
     <?php
         include('../main_nav.php');
     ?>
+    <div class="container">
+        <form action="students_detail.php" method="get">
+            <span>
+                Search by:
+            </span>
+            <select name="session_id" id="search-by-session">
+                <option value='' selected>Session and Year..</option>
+                <?php 
+                    include('../conn.php');
 
-        <h3>
-            search by:
-        </h3>
+                    $sql_session = "SELECT * FROM clg_session order by session_name desc limit 0 , 3 ;";
+                    $result = $conn->query($sql_session);
+                    if(!$result)
+                    {
+                        die("Invalid query: " . $conn->error);
+                    }
+                    $row_session = $result->fetch_assoc();
+                    echo "<option value=".$row_session['id'].">".$row_session['session_name']." (1st Year)</option>";
+                    $row_session = $result->fetch_assoc();
+                    echo "<option value=".$row_session['id'].">".$row_session['session_name']." (2nd Year)</option> ";
+                    $row_session = $result->fetch_assoc();
+                    echo "<option value=".$row_session['id'].">".$row_session['session_name']." (3rd Year)</option> ";
+                    while ($row_session = $result->fetch_assoc()) {
+                        echo "<option value=".$row_session['id'].">".$row_session['session_name']."</option> ";
+                    }
+                ?>
+            </select>
+            
+            </select>
+            <select name="branch_id" id="search-by-session">
+                <option value='' selected>Branch..</option>
+                    <?php
+                        include('../conn.php');
+						
+						$sql_branch = "SELECT * FROM branches order by branch_name asc;";
+						$result = $conn->query($sql_branch);
+						if(!$result)
+						{
+							die("Invalid query: " . $conn->error);
+						}
+						$row_branch = $result->fetch_assoc();
+						echo "<option value=".$row_branch['id'].">".$row_branch['branch_name']."</option>";
+						$row_branch = $result->fetch_assoc();
+						echo "<option value=".$row_branch['id'].">".$row_branch['branch_name']."</option> ";
+						$row_branch = $result->fetch_assoc();
+						echo "<option value=".$row_branch['id'].">".$row_branch['branch_name']."</option> ";
+						while ($row_branch = $result->fetch_assoc()) {
+							echo "<option value=".$row_branch['id'].">".$row_branch['branch_name']."</option> ";
+						}
+					?>
+                </select>
+                
+            <button type="submit" class="btn btn-dark">Search</button>
+            <a href="./students_detail.php">
+                <button type="button" class="btn btn-dark">Clear</button>
+            </a>
+        </form>
+    </div>
+        
     <table class="table table-light table-striped-columns table table-hover">
         <thead class="table-success">
             <tr>
@@ -31,9 +86,6 @@
                 </th>
                 <th>
                     Guardian Name
-                </th>
-                <th>
-                    Gmail
                 </th>
                 <th>
                     Phone No.
@@ -57,31 +109,55 @@
         </thead>
         <tbody>
             <?php
-            include('../conn.php');
-            $sql = "SELECT std.id,
-                std_name,
-                guardian_name,
-                gmail,
-                phone_no,
-                guardian_phone_no,
-                gender,
-                blood_grp,
-                branch_name,
-                session_name from student std
-            inner join branches bra on  bra.id = std.branch_id 
-            inner join clg_session cls on cls.id = std.session_id
-            inner join gender g on g.id = std.gender_id
-            inner join users on users.id = std.user_id;
-           ";
-            $result = $conn->query($sql);
-            if(!$result)
-            {
-                die("Invalid query: " .  $conn->error);
+            $raw_sql = "SELECT std.id,
+            std_name,
+            guardian_name,
+            gmail,
+            phone_no,
+            guardian_phone_no,
+            gender,
+            blood_grp,
+            branch_name,
+            session_name from student std
+         inner join branches bra on  bra.id = std.branch_id 
+         inner join clg_session cls on cls.id = std.session_id
+         inner join gender g on g.id = std.gender_id
+         inner join users on users.id = std.user_id";
+
+            if(isset($_GET['session_id']) || isset($_GET['branch_id'])) {
+                $get_session = $_GET['session_id'];
+                $get_branch = $_GET['branch_id'];
+                if( $get_session === '' && $get_branch === '' ) {
+                    
+                    $sql = $raw_sql . ";" ;
+                    show_table($sql);
+                }
+                else if ($get_session === '' && !($get_branch === '')) {
+                    $sql = $raw_sql . " where branch_id = $get_branch;" ;
+                    show_table($sql);
+                }
+                else if(!($get_session === '') && $get_branch === '') {
+                    $sql = $raw_sql . " where session_id = $get_session;" ;
+                    show_table($sql);
+                }
+                else if ( !($get_session === '') && !($get_branch === '') ){
+                    $sql = $raw_sql . " where session_id = $get_session and branch_id = $get_branch;" ;
+                    show_table($sql);
+                }
             }
-            
-            while($row = $result->fetch_assoc()) {
-                
-                echo "<tr>
+            else {
+                $sql = $raw_sql . ";" ;
+                show_table($sql);
+            }
+            function show_table($sql) {
+                include('../conn.php');
+                $result = $conn->query($sql);
+                if(!$result)
+                {
+                    die("Invalid query: " . $conn->error);
+                }
+                while($row = $result->fetch_assoc()) {
+                    echo "<tr>
                     <td>
                         ".$row['id']."
                     </td>
@@ -90,9 +166,6 @@
                     </td>
                     <td>
                         ".$row['guardian_name']."
-                    </td>
-                    <td>
-                        ".$row['gmail']."
                     </td>
                     <td>
                         ".$row['phone_no']."
@@ -112,7 +185,8 @@
                     <td>
                         ".$row['session_name']."
                     </td>
-                </tr>";
+                    </tr>";
+                }
             }
             ?>
         </tbody>

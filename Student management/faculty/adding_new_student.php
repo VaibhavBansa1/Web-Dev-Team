@@ -3,6 +3,7 @@ session_start();
 if (!(isset($_SESSION['id']) && $_SESSION['user'] == 'faculty')) {
 	header("location:index.php");
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,6 +12,16 @@ if (!(isset($_SESSION['id']) && $_SESSION['user'] == 'faculty')) {
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Add Student</title>
+	<?php
+		if (isset($_GET['success'])) {
+			if($_GET['success'] == true) {
+				echo "<script>alert('Added successfully')</script>";
+			}
+			else if($_GET['success'] == false) {
+				echo "<script>alert('Failed to add')</script>";
+			}
+		}
+	?>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
 </head>
 
@@ -22,7 +33,7 @@ if (!(isset($_SESSION['id']) && $_SESSION['user'] == 'faculty')) {
 	<h1 class="text-center"><u>Add Student</u></h1><br>
 	<div>
 
-		<form class="row g-3 ms-5 me-5 mt-3 mb-5 border border-4 border-black fw-semibold" action="add_this_student.php" method="post">
+		<form class="row g-3 ms-5 me-5 mt-3 mb-5 border border-4 border-black fw-semibold" action="./add_this_student.php" method="post">
 			<div class="col-md-6">
 				<label for="S_Name" class="form-label">Student Name</label>
 				<input type="text" class="form-control" id="S_Name" name="s_name" required>
@@ -50,7 +61,7 @@ if (!(isset($_SESSION['id']) && $_SESSION['user'] == 'faculty')) {
 			<div class="col-md-4">
 				<label for="Gender" class="form-label">Gender</label>
 				<select id="Gender" class="form-select" name="gender">
-					<option selected>Choose...</option>
+					<option value='' selected>Choose...</option>
 					<option value="M">Male</option>
 					<option value="F">Female</option>
 					<option value="O">Other</option>
@@ -59,7 +70,7 @@ if (!(isset($_SESSION['id']) && $_SESSION['user'] == 'faculty')) {
 			<div class="col-md-4">
 				<label for="Blood_Group" class="form-label">Blood Group</label>
 				<select id="Blood_Group" class="form-select" name="blood_group">
-					<option selected>Choose...</option>
+					<option value='' selected>Choose...</option>
 					<option value="A+">A+</option>
 					<option value="A-">A-</option>
 					<option value="B+">B+</option>
@@ -77,19 +88,35 @@ if (!(isset($_SESSION['id']) && $_SESSION['user'] == 'faculty')) {
 			<div class="col-md-6">
 				<label for="Branch" class="form-label">Branch</label>
 				<select id="Branch" class="form-select" name="branch">
-					<option selected>Choose...</option>
-					<option value="1">Computer Science & Engineering(CSE)</option>
-					<option value="2">Electrical Engineering(EE)</option>
-					<option value="3">Information Technology(IT)</option>
+					<option value='' selected>Choose...</option>
+					<option value="1">C.S.E</option>
+					<option value="2">E.E</option>
+					<option value="3">I.T</option>
 				</select>
 			</div>
 			<div class="col-md-6">
 				<label for="Session" class="form-label">Session</label>
 				<select id="Session" class="form-select" name="session">
-					<option selected>Choose...</option>
-					<option value="1">2021-2024</option>
-					<option value="2">2022-2025</option>
-					<option value="3">2023-2026</option>
+					<option value='' selected>Session..</option>
+					<?php
+						include('../conn.php');
+						
+						$sql_session = "SELECT * FROM clg_session order by session_name desc limit 0 , 3 ;";
+						$result = $conn->query($sql_session);
+						if(!$result)
+						{
+							die("Invalid query: " . $conn->error);
+						}
+						$row = $result->fetch_assoc();
+						echo "<option value=".$row['id'].">".$row['session_name']." (1st Year)</option>";
+						$row = $result->fetch_assoc();
+						echo "<option value=".$row['id'].">".$row['session_name']." (2nd Year)</option> ";
+						$row = $result->fetch_assoc();
+						echo "<option value=".$row['id'].">".$row['session_name']." (3rd Year)</option> ";
+						while ($row = $result->fetch_assoc()) {
+							echo "<option value=".$row['id'].">".$row['session_name']."</option> ";
+						}
+					?>
 				</select>
 			</div>
 			<div class="col-md-6">

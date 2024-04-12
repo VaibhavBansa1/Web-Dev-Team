@@ -1,5 +1,5 @@
 <?php
-    if (isset($_POST['rollno,']) &&
+    if (isset($_POST['rollno']) &&
     isset($_POST['s_name']) &&
     isset($_POST['g_name']) &&
     isset($_POST['gmail']) &&
@@ -22,15 +22,21 @@
         $guardian_phone_no = $_POST['g_mobile'];
         $dob = $_POST['dob'];
         $gender_id = $_POST['gender'];
-        $password = $_POST['password'];
+        $pass = $_POST['password'];
         $blood_grp = $_POST['blood_group'];
         $address = $_POST['address'];
         $branch_id = $_POST['branch'];
         $session_id = $_POST['session'];
         
         $sql = "INSERT INTO student( id, std_name, guardian_name, gmail, phone_no, guardian_phone_no, dob, gender_id, password, blood_grp, address, branch_id, session_id) 
-        values ('$id', '$std_name', '$guardian_name', '$gmail', '$phone_no', '$guardian_phone_no', '$dob', '$gender_id', '$password', '$blood_grp', '$address', $branch_id, $session_id);";
-        $conn->query($sql);
+        values ('$id', '$std_name', '$guardian_name', '$gmail', '$phone_no', '$guardian_phone_no', '$dob', '$gender_id', '$pass', '$blood_grp', '$address', $branch_id, $session_id);";
+        $result = $conn->query($sql);
+        if ($result){
+            header("location:adding_new_student.php?success=".true);
+        }
+        else {
+            header("location:adding_new_student.php?success=".false);
+        }
         $conn->close();
     }
     else {
