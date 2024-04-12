@@ -127,6 +127,7 @@ SELECT std.id,
             inner join gender g on g.id = std.gender_id
             inner join users on users.id = std.user_id where session_id = '2';
 
+-- insert into clg_session values (4,'2024-2027');
 select * from clg_session order by session_name desc limit 0 , 3 ;
 
 select count(*)+1, branch_name from student std
@@ -148,5 +149,5 @@ select count(*), branch_name from faculty fac
  inner join users on users.id = fac.user_id group by branch_name;
  
  select count(*), branch_id from student group by branch_id;
- 
+
 SELECT std.id, std_name, guardian_name, gmail, phone_no, guardian_phone_no, gender, blood_grp, branch_name, session_name from student std inner join branches bra on bra.id = std.branch_id inner join clg_session cls on cls.id = std.session_id inner join gender g on g.id = std.gender_id inner join users on users.id = std.user_id where session_id = 3 and branch_id = 1;
