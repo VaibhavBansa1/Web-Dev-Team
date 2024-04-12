@@ -88,10 +88,26 @@ if (!(isset($_SESSION['id']) && $_SESSION['user'] == 'faculty')) {
 			<div class="col-md-6">
 				<label for="Branch" class="form-label">Branch</label>
 				<select id="Branch" class="form-select" name="branch">
-					<option value='' selected>Choose...</option>
-					<option value="1">C.S.E</option>
-					<option value="2">E.E</option>
-					<option value="3">I.T</option>
+					<option value='' selected>Branch..</option>
+                    <?php
+                        include('../conn.php');
+						
+						$sql_branch = "SELECT * FROM branches order by branch_name asc;";
+						$result = $conn->query($sql_branch);
+						if(!$result)
+						{
+							die("Invalid query: " . $conn->error);
+						}
+						$row_branch = $result->fetch_assoc();
+						echo "<option value=".$row_branch['id'].">".$row_branch['branch_name']."</option>";
+						$row_branch = $result->fetch_assoc();
+						echo "<option value=".$row_branch['id'].">".$row_branch['branch_name']."</option> ";
+						$row_branch = $result->fetch_assoc();
+						echo "<option value=".$row_branch['id'].">".$row_branch['branch_name']."</option> ";
+						while ($row_branch = $result->fetch_assoc()) {
+							echo "<option value=".$row_branch['id'].">".$row_branch['branch_name']."</option> ";
+						}
+					?>
 				</select>
 			</div>
 			<div class="col-md-6">
