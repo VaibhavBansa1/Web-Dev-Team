@@ -18,60 +18,45 @@
     <h1>
         Presets
     </h1>
-    <fieldset>
-        <legend>
-            <h2>
-                Branch 
-            </h2>
-        </legend>
-
-        <select id="Branch" class="form-select" name="branch">
-					<option value='' selected>Branch..</option>
+    <div class="container">
+        <h2>
+            Branch 
+        </h2>
+        
+        <ul id="Branch">
                     <?php
                         include('../conn.php');
-						
-						$sql_branch = "SELECT * FROM branches order by branch_name asc;";
-						$result = $conn->query($sql_branch);
-						if(!$result)
-						{
+                        
+                        $sql_branch = "SELECT * FROM branches order by branch_name asc;";
+                        $result = $conn->query($sql_branch);
+                        if(!$result)
+                        {
                             die("Invalid query: " . $conn->error);
-						}
-						while ($row_branch = $result->fetch_assoc()) {
-                            echo "<option value=".$row_branch['id'].">".$row_branch['branch_name']."</option> ";
-						}
+                        }
+                        while ($row_branch = $result->fetch_assoc()) {
+                            echo "<li value=".$row_branch['id'].">".$row_branch['branch_name']."</li> ";
+                        }
                     ?>
-        </select>
+        </ul>
         
-    </fieldset>
-    <fieldset>
-        <legend>
-            <h2>
-                Session 
-            </h2>
-        </legend>
-        <select id="Session" class="form-select" name="session">
-			<option value='' selected>Session..</option>
-			<?php
-				include('../conn.php');
-				
-				$sql_session = "SELECT * FROM clg_session order by session_name desc;";
-				$result = $conn->query($sql_session);
-				if(!$result)
-				{
-					die("Invalid query: " . $conn->error);
-				}
-				$row = $result->fetch_assoc();
-				echo "<option value=".$row['id'].">".$row['session_name']." (1st Year)</option>";
-				$row = $result->fetch_assoc();
-				echo "<option value=".$row['id'].">".$row['session_name']." (2nd Year)</option> ";
-				$row = $result->fetch_assoc();
-				echo "<option value=".$row['id'].">".$row['session_name']." (3rd Year)</option> ";
-				while ($row = $result->fetch_assoc()) {
-					echo "<option value=".$row['id'].">".$row['session_name']."</option> ";
-				}
-			?>
-		</select>
-        
-    </fieldset>
+        <h2>
+            Session 
+        </h2>
+        <ul id="Session">
+            <?php
+                include('../conn.php');
+                
+                $sql_session = "SELECT * FROM clg_session order by session_name desc;";
+                $result = $conn->query($sql_session);
+                if(!$result)
+                {
+                    die("Invalid query: " . $conn->error);
+                }
+                while ($row = $result->fetch_assoc()) {
+                    echo "<li value=".$row['id'].">".$row['session_name']."</li> ";
+                }
+            ?>
+        </ul>
+    </div>
 </body>
 </html>

@@ -2,11 +2,11 @@ drop database college;
 create database college;
 use college;
 create table branches(
-	id int not null primary key,
+	id int not null primary key AUTO_INCREMENT,
 	branch_name varchar(20) not null unique
 );
 create table clg_session(
-	id int not null primary key,
+	id int not null primary key AUTO_INCREMENT,
 	session_name varchar(10) not null unique
 );
 create table gender(
