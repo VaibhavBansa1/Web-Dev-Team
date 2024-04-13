@@ -26,7 +26,7 @@
                 <?php 
                     include('../conn.php');
 
-                    $sql_session = "SELECT * FROM clg_session order by session_name desc limit 0 , 3 ;";
+                    $sql_session = "SELECT * FROM clg_session order by session_name desc;";
                     $result = $conn->query($sql_session);
                     if(!$result)
                     {
@@ -105,92 +105,90 @@
             </tr>
         </thead>
         <tbody>
-            <?php
-            $raw_sql = "SELECT std.id,
-            std_name,
-            guardian_name,
-            gmail,
-            phone_no,
-            guardian_phone_no,
-            gender,
-            blood_grp,
-            branch_name,
-            session_name from student std
-         inner join branches bra on  bra.id = std.branch_id 
-         inner join clg_session cls on cls.id = std.session_id
-         inner join gender g on g.id = std.gender_id
-         inner join users on users.id = std.user_id";
+            <form action='student_profile.php' method='post'>
+                <?php
+                    $raw_sql = "SELECT std.id,
+                    std_name,
+                    guardian_name,
+                    gmail,
+                    phone_no,
+                    guardian_phone_no,
+                    gender,
+                    blood_grp,
+                    branch_name,
+                    session_name from student std
+                    inner join branches bra on  bra.id = std.branch_id 
+                    inner join clg_session cls on cls.id = std.session_id
+                    inner join gender g on g.id = std.gender_id
+                    inner join users on users.id = std.user_id";
 
-            if(isset($_GET['session_id']) || isset($_GET['branch_id'])) {
-                $get_session = $_GET['session_id'];
-                $get_branch = $_GET['branch_id'];
-                if( $get_session === '' && $get_branch === '' ) {
-                    
+                if(isset($_GET['session_id']) || isset($_GET['branch_id'])) {
+                    $get_session = $_GET['session_id'];
+                    $get_branch = $_GET['branch_id'];
+                    if( $get_session === '' && $get_branch === '' ) {
+                        $sql = $raw_sql . ";" ;
+                        show_table($sql);
+                    }
+                    else if ($get_session === '' && !($get_branch === '')) {
+                        $sql = $raw_sql . " where branch_id = $get_branch;" ;
+                        show_table($sql);
+                    }
+                    else if(!($get_session === '') && $get_branch === '') {
+                        $sql = $raw_sql . " where session_id = $get_session;" ;
+                        show_table($sql);
+                    }
+                    else if ( !($get_session === '') && !($get_branch === '') ) {
+                        $sql = $raw_sql . " where session_id = $get_session and branch_id = $get_branch;" ;
+                        show_table($sql);
+                    }
+                }
+                else {
                     $sql = $raw_sql . ";" ;
                     show_table($sql);
                 }
-                else if ($get_session === '' && !($get_branch === '')) {
-                    $sql = $raw_sql . " where branch_id = $get_branch;" ;
-                    show_table($sql);
-                }
-                else if(!($get_session === '') && $get_branch === '') {
-                    $sql = $raw_sql . " where session_id = $get_session;" ;
-                    show_table($sql);
-                }
-                else if ( !($get_session === '') && !($get_branch === '') ){
-                    $sql = $raw_sql . " where session_id = $get_session and branch_id = $get_branch;" ;
-                    show_table($sql);
-                }
-            }
-            else {
-                $sql = $raw_sql . ";" ;
-                show_table($sql);
-            }
-            function show_table($sql) {
-                include('../conn.php');
-                $result = $conn->query($sql);
-                if(!$result)
-                {
-                    die("Invalid query: " . $conn->error);
-                }
-                while($row = $result->fetch_assoc()) {
-                    echo "<tr>
-                    <td>
-                        ".$row['id']."
-                    </td>
-                    <td>
-                        ".$row['std_name']."
-                    </td>
-                    <td>
-                        ".$row['guardian_name']."
-                    </td>
-                    <td>
-                        ".$row['phone_no']."
-                    </td>
-                    <td>
-                        ".$row['guardian_phone_no']."
-                    </td>
-                    <td>
-                        ".$row['gender']."
-                    </td>
-                    <td>
-                        ".$row['blood_grp']."
-                    </td>
-                    <td>
-                        ".$row['branch_name']."
-                    </td>
-                    <td>
-                        ".$row['session_name']."
-                    </td>
-                    <td>
-                        <form action='student_profile.php' method='post'>
+                function show_table($sql) {
+                    include('../conn.php');
+                    $result = $conn->query($sql);
+                    if(!$result) {
+                        die("Invalid query: " . $conn->error);
+                    }
+                    while($row = $result->fetch_assoc()) {
+                        echo "<tr>
+                        <td>
+                            ".$row['id']."
+                        </td>
+                        <td>
+                            ".$row['std_name']."
+                        </td>
+                        <td>
+                            ".$row['guardian_name']."
+                        </td>
+                        <td>
+                            ".$row['phone_no']."
+                        </td>
+                        <td>
+                            ".$row['guardian_phone_no']."
+                        </td>
+                        <td>
+                            ".$row['gender']."
+                        </td>
+                        <td>
+                            ".$row['blood_grp']."
+                        </td>
+                        <td>
+                            ".$row['branch_name']."
+                        </td>
+                        <td>
+                            ".$row['session_name']."
+                        </td>
+                        <td>
                             <button type='submit' class='btn btn-success' name='id' value=".$row['id'].">Edit...</button>
-                        </form>
-                    </td>
-                    </tr>";
+                        </td>
+                        </tr>";
+                    }
                 }
-            }
-            ?>
+                ?>
+            </form>
         </tbody>
     </table>
 </body>

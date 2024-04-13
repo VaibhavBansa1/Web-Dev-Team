@@ -98,12 +98,6 @@ if (!(isset($_SESSION['id']) && $_SESSION['user'] == 'faculty')) {
 						{
 							die("Invalid query: " . $conn->error);
 						}
-						$row_branch = $result->fetch_assoc();
-						echo "<option value=".$row_branch['id'].">".$row_branch['branch_name']."</option>";
-						$row_branch = $result->fetch_assoc();
-						echo "<option value=".$row_branch['id'].">".$row_branch['branch_name']."</option> ";
-						$row_branch = $result->fetch_assoc();
-						echo "<option value=".$row_branch['id'].">".$row_branch['branch_name']."</option> ";
 						while ($row_branch = $result->fetch_assoc()) {
 							echo "<option value=".$row_branch['id'].">".$row_branch['branch_name']."</option> ";
 						}
@@ -117,7 +111,7 @@ if (!(isset($_SESSION['id']) && $_SESSION['user'] == 'faculty')) {
 					<?php
 						include('../conn.php');
 						
-						$sql_session = "SELECT * FROM clg_session order by session_name desc limit 0 , 3 ;";
+						$sql_session = "SELECT * FROM clg_session order by session_name desc;";
 						$result = $conn->query($sql_session);
 						if(!$result)
 						{
