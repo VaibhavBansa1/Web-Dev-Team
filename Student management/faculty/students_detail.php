@@ -9,7 +9,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Student Details</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
@@ -56,12 +56,6 @@
 						{
 							die("Invalid query: " . $conn->error);
 						}
-						$row_branch = $result->fetch_assoc();
-						echo "<option value=".$row_branch['id'].">".$row_branch['branch_name']."</option>";
-						$row_branch = $result->fetch_assoc();
-						echo "<option value=".$row_branch['id'].">".$row_branch['branch_name']."</option> ";
-						$row_branch = $result->fetch_assoc();
-						echo "<option value=".$row_branch['id'].">".$row_branch['branch_name']."</option> ";
 						while ($row_branch = $result->fetch_assoc()) {
 							echo "<option value=".$row_branch['id'].">".$row_branch['branch_name']."</option> ";
 						}
@@ -70,7 +64,7 @@
                 
             <button type="submit" class="btn btn-dark">Search</button>
             <a href="./students_detail.php">
-                <button type="button" class="btn btn-dark">Clear</button>
+                <button type="button" class="btn btn-dark">Show all student</button>
             </a>
         </form>
     </div>
@@ -104,6 +98,9 @@
                 </th>
                 <th>
                     Session
+                </th>
+                <th>
+                    More
                 </th>
             </tr>
         </thead>
@@ -184,6 +181,11 @@
                     </td>
                     <td>
                         ".$row['session_name']."
+                    </td>
+                    <td>
+                        <form action='student_profile.php' method='post'>
+                            <button type='button' class='btn btn-success'>Edit...</button>
+                        </form>
                     </td>
                     </tr>";
                 }
