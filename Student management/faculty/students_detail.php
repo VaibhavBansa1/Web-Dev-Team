@@ -184,7 +184,7 @@
                     </td>
                     <td>
                         <form action='student_profile.php' method='post'>
-                            <button type='button' class='btn btn-success'>Edit...</button>
+                            <button type='submit' class='btn btn-success' name='id' value=".$row['id'].">Edit...</button>
                         </form>
                     </td>
                     </tr>";
