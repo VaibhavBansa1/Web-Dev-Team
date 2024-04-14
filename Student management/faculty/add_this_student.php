@@ -35,6 +35,7 @@
         $sql = "INSERT INTO student( id, std_name, guardian_name, gmail, phone_no, guardian_phone_no, dob, gender_id, password, blood_grp, address, branch_id, session_id) 
         values ('$id', '$std_name', '$guardian_name', '$gmail', '$phone_no', '$guardian_phone_no', '$dob', '$gender_id', '$pass', '$blood_grp', '$address', $branch_id, $session_id);";
         $result = $conn->query($sql);
+        $conn->error;
         if ($result){
             header("location:adding_new_student.php?success=".true);
         }
@@ -46,4 +47,3 @@
     else {
         header("location:adding_new_student.php");
     }
-?>
