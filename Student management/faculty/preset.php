@@ -19,7 +19,7 @@
         Presets
     </h1>
     <div class="container">
-        <h2>
+        <h2 class="form-control" >
             Branch 
         </h2>
         
