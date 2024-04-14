@@ -32,19 +32,20 @@
                     {
                         die("Invalid query: " . $conn->error);
                     }
-                    $row_session = $result->fetch_assoc();
-                    echo "<option value=".$row_session['id'].">".$row_session['session_name']." (1st Year)</option>";
-                    $row_session = $result->fetch_assoc();
-                    echo "<option value=".$row_session['id'].">".$row_session['session_name']." (2nd Year)</option> ";
-                    $row_session = $result->fetch_assoc();
-                    echo "<option value=".$row_session['id'].">".$row_session['session_name']." (3rd Year)</option> ";
+                    $years = ['(1st Year)', '(2nd Year)', '(3rd Year)'];
+                    $year = 0;
+                    $selected = '';
                     while ($row_session = $result->fetch_assoc()) {
-                        echo "<option value=".$row_session['id'].">".$row_session['session_name']."</option> ";
+                        if (isset($_GET['session_id'])) {
+                            $selected = ($row_session['id'] === $_GET['session_id']) ? 'selected' : '';
+                        }
+                        $show_year = ( $year < 3 ? $years[$year++] : '');
+                        echo " <option value='".$row_session['id']."' ".$selected.">".$row_session['session_name']." $show_year</option>";
                     }
                 ?>
             </select>
 
-            <select name="branch_id" id="search-by-session">
+            <select name="branch_id" id="search-by-branch">
                 <option value='' selected>Branch..</option>
                     <?php
                         // include('../conn.php');
@@ -56,8 +57,12 @@
 							die("Invalid query: " . $conn->error);
 						}
 						while ($row_branch = $result->fetch_assoc()) {
-							echo "<option value=".$row_branch['id'].">".$row_branch['branch_name']."</option> ";
+                            if (isset($_GET['session_id'])) {
+                                $selected = ($row_branch['id'] === $_GET['branch_id']) ? 'selected' : '';
+                            }
+							echo "<option value='".$row_branch['id']."' ".$selected.">".$row_branch['branch_name']."</option> ";
 						}
+                        $conn->close();
 					?>
             </select>
                 
@@ -155,9 +160,9 @@
                 function show_table($sql) {
                     include('../conn.php');
                     $result = $conn->query($sql);
-                    // if(!$result) {
-                        // die("Invalid query: " . $conn->error);
-                    // }
+                    if(!$result) {
+                        die("Invalid query: " . $conn->error);
+                    }
                     while($row = $result->fetch_assoc()) {
                         echo "<tr>
                         <td>
