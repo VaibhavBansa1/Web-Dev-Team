@@ -43,8 +43,7 @@
                     }
                 ?>
             </select>
-            
-            </select>
+
             <select name="branch_id" id="search-by-session">
                 <option value='' selected>Branch..</option>
                     <?php
@@ -60,7 +59,7 @@
 							echo "<option value=".$row_branch['id'].">".$row_branch['branch_name']."</option> ";
 						}
 					?>
-                </select>
+            </select>
                 
             <button type="submit" class="btn btn-dark">Search</button>
             <a href="./students_detail.php">
@@ -142,6 +141,13 @@
                         show_table($sql);
                     }
                 }
+                else if (isset($_GET['delete_success'])) {
+                    if($_GET['delete_success'] == true) {
+                        echo "<script>alert('Deleted successfully')</script>";
+                    }
+                    $sql = $raw_sql . ";" ;
+                    show_table($sql);
+                }
                 else {
                     $sql = $raw_sql . ";" ;
                     show_table($sql);
@@ -149,9 +155,9 @@
                 function show_table($sql) {
                     include('../conn.php');
                     $result = $conn->query($sql);
-                    if(!$result) {
-                        die("Invalid query: " . $conn->error);
-                    }
+                    // if(!$result) {
+                        // die("Invalid query: " . $conn->error);
+                    // }
                     while($row = $result->fetch_assoc()) {
                         echo "<tr>
                         <td>
@@ -182,7 +188,8 @@
                             ".$row['session_name']."
                         </td>
                         <td>
-                            <button type='submit' class='btn btn-success' name='id' value=".$row['id'].">Edit...</button>
+                            <button type='submit' class='btn btn-success' name='id' value=".$row['id'].">Edit Info</button>
+                            <button type='submit' class='btn btn-success' name='delete' value=".$row['id'].">Delete</button>
                         </td>
                         </tr>";
                     }
