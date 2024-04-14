@@ -48,7 +48,7 @@
             <select name="branch_id" id="search-by-session">
                 <option value='' selected>Branch..</option>
                     <?php
-                        include('../conn.php');
+                        // include('../conn.php');
 						
 						$sql_branch = "SELECT * FROM branches order by branch_name asc;";
 						$result = $conn->query($sql_branch);
@@ -105,7 +105,7 @@
             </tr>
         </thead>
         <tbody>
-            <form action='student_profile.php' method='post'>
+            <form action='student_profile.php' method='get'>
                 <?php
                     $raw_sql = "SELECT std.id,
                     std_name,
