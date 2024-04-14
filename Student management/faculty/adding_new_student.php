@@ -117,15 +117,23 @@ if (!(isset($_SESSION['id']) && $_SESSION['user'] == 'faculty')) {
 						{
 							die("Invalid query: " . $conn->error);
 						}
-						$row = $result->fetch_assoc();
-						echo "<option value=".$row['id'].">".$row['session_name']." (1st Year)</option>";
-						$row = $result->fetch_assoc();
-						echo "<option value=".$row['id'].">".$row['session_name']." (2nd Year)</option> ";
-						$row = $result->fetch_assoc();
-						echo "<option value=".$row['id'].">".$row['session_name']." (3rd Year)</option> ";
-						while ($row = $result->fetch_assoc()) {
-							echo "<option value=".$row['id'].">".$row['session_name']."</option> ";
+						
+						$years = ['(1st Year)', '(2nd Year)', '(3rd Year)'];
+						$year = 0;
+						while ($row_session = $result->fetch_assoc()) {
+							$show_year = ( $year < 3 ? $years[$year++] : '');
+							echo " <option value='".$row_session['id']."'>".$row_session['session_name']." $show_year</option>";
 						}
+						
+						// $row = $result->fetch_assoc();
+						// echo "<option value=".$row['id'].">".$row['session_name']." (1st Year)</option>";
+						// $row = $result->fetch_assoc();
+						// echo "<option value=".$row['id'].">".$row['session_name']." (2nd Year)</option> ";
+						// $row = $result->fetch_assoc();
+						// echo "<option value=".$row['id'].">".$row['session_name']." (3rd Year)</option> ";
+						// while ($row = $result->fetch_assoc()) {
+						// 	echo "<option value=".$row['id'].">".$row['session_name']."</option> ";
+						// }
 					?>
 				</select>
 			</div>

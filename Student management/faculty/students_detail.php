@@ -160,9 +160,9 @@
                 function show_table($sql) {
                     include('../conn.php');
                     $result = $conn->query($sql);
-                    if(!$result) {
-                        die("Invalid query: " . $conn->error);
-                    }
+                    // if(!$result) {
+                    //     die("Invalid query: " . $conn->error);
+                    // }
                     while($row = $result->fetch_assoc()) {
                         echo "<tr>
                         <td>
@@ -193,8 +193,10 @@
                             ".$row['session_name']."
                         </td>
                         <td>
-                            <button type='submit' class='btn btn-success' name='id' value=".$row['id'].">Edit Info</button>
-                            <button type='submit' class='btn btn-success' name='delete' value=".$row['id'].">Delete</button>
+                            <div>
+                                <button type='submit' class='btn btn-success p-1 m-1' name='id' value=".$row['id']."> Edit... </button>
+                                <button type='submit' class='btn btn-danger p-1 m-1' name='delete' value=".$row['id']."> Delete </button>
+                            </div>
                         </td>
                         </tr>";
                     }

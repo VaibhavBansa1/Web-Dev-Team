@@ -59,4 +59,3 @@ else if ( (isset($_GET['s_name']) &&
 else {
 	header("location:index.php");
 }
-?>

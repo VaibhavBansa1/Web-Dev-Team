@@ -159,7 +159,7 @@ if (!(isset($_SESSION['id']) && $_SESSION['user'] == 'faculty')) {
 			</div>
 			<div class="col-12">
 				<button type="submit" class="btn btn-primary d-grid gap-2 col-6 mx-auto mb-3 mt-3" name="update" value="<?php echo $row['id']; ?>">Edit Student</button>
-				<button type="submit" class="btn btn-primary d-grid gap-2 col-6 mx-auto mb-3 mt-3" name="delete" value="<?php echo $row['id']; ?>">Delete Student</button>
+				<button type="submit" class="btn btn-danger d-grid gap-2 col-6 mx-auto mb-3 mt-3" name="delete" value="<?php echo $row['id']; ?>">Delete Student</button>
 			</div>
 		</form>
 	</div>
