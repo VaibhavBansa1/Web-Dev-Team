@@ -16,6 +16,7 @@
             session_start();
             $_SESSION['id'] = $session_id;
             $_SESSION['user'] = 'student';
+            $_SESSION['user_id'] = $result['id'];
             header("location:profile.php");
         }
         else{

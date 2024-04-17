@@ -29,7 +29,7 @@ if (!(isset($_SESSION['id']) && $_SESSION['user'] == 'faculty')) {
 		<?php 
 			if(isset($_GET['id'])) {
 				$get_id = $_GET['id'];
-				include('../conn.php');
+				include '../conn.php' ;
 				$sql = "SELECT std.id,
 				std_name,
 				guardian_name,
