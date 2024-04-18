@@ -1,22 +1,27 @@
 <head>
+    <style>
+    </style>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg" style="z-index:100;background-color: #2c73ab;">
-        <div class="container" style="background-color: #2c73ab;">
+    <nav class="navbar navbar-expand-lg Nav-bar" style="z-index:100;background-color: red;">
+        <div class="container-fluid">
+            <div>
+                <img src="https://www.fujitsu.com/au/imagesgig5/Icon_Students_tcm98-3749853_tcm98-2750236-32.png" alt="" style="width:50px; height:50px;">
+            </div>
             <!-- <a class="navbar-brand text-primary" href="#">Dr.BR.Ambedkar polytechnic college Gwalior</a> -->
-            <button class="navbar-toggler bg-primary bg-gradient" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler bg-gradient" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="../home">Home</a>
+                        <a class="nav-link active" aria-current="page" href="../home"><span class="text-white"><b>Home</b></span></a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            login as
+                            <span class="text-white"><b>login as</b></span>
                         </a>
                         <ul class="dropdown-menu" style="background-color: #99d2e5;">
                             <li><a class="dropdown-item" href="../student/">Student</a></li>

@@ -28,12 +28,12 @@
         $branch_id = $_POST['branch'];
         $session_id = $_POST['session'];
         
-        $sql = "INSERT INTO student( id, std_name, guardian_name, gmail, phone_no, guardian_phone_no, dob, gender_id, password, blood_grp, address, branch_id, session_id) 
-        values ('$id', '$std_name', '$guardian_name', '$gmail', '$phone_no', '$guardian_phone_no', '$dob', '$gender_id', '$password', '$blood_grp', '$address', $branch_id, $session_id);";
+        echo $sql = "INSERT INTO student( id, std_name, guardian_name, gmail, phone_no, guardian_phone_no, dob, gender_id, password, blood_grp, address, branch_id, session_id) 
+        values (".$id', '$std_name', '$guardian_name', '$gmail', '$phone_no', '$guardian_phone_no', '$dob', '$gender_id', '$password', '$blood_grp', '$address', $branch_id, $session_id);";
         $conn->query($sql);
         $conn->close();
     }
     else {
-        header("location:adding_new_student.php");
+        // header("location:adding_new_student.php");
     }
 ?>

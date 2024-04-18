@@ -8,16 +8,17 @@
 <body>
     <?php
         include('../main_nav.php');
+        include('Faculty_navbar.php');
     ?>
 
     <h1>
         Faculty personal profile
+    </h1>
         <?php
             session_start();
             if(!(isset($_SESSION['id']) && $_SESSION['user'] == 'faculty')){
                 header("location:index.php");
             }
         ?>
-    </h1>
 </body>
 </html>

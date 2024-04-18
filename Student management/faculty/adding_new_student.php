@@ -17,12 +17,13 @@ if (!(isset($_SESSION['id']) && $_SESSION['user'] == 'faculty')) {
 <body class="bg-success-subtle">
 	<?php
 		include('../main_nav.php');
+		include('./Faculty_navbar.php');
     ?>
 
-	<h1 class="text-center"><u>Add Student</u></h1><br>
-	<div>
-
-		<form class="row g-3 ms-5 me-5 mt-3 mb-5 border border-4 border-black fw-semibold" action="add_this_student.php" method="post">
+<div>
+	
+	<form class="row g-3 ms-5 me-5 mt-3 mb-5 border border-4 border-black fw-semibold" action="add_this_student.php" method="post">
+		<h1 class="text-center"><u>Add Student</u></h1><br>
 			<div class="col-md-6">
 				<label for="S_Name" class="form-label">Student Name</label>
 				<input type="text" class="form-control" id="S_Name" name="s_name" required>

@@ -15,6 +15,7 @@
 <body>
     <?php
         include('../main_nav.php');
+        include('./Faculty_navbar.php');
     ?>
 
         <h3>
