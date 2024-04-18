@@ -1,17 +1,37 @@
-<h1> Front-End - Aman </h1>
+<h1> Front-End : 
+
+ <ul>
+
+    <li>
+        1. Keshav Rajpoot
+    </li>
+
+    <li>
+        2. Aman
+    </li>
+
+ </ul>
+
+</h1>
+
 <h1> Back-End :
  <ul>
+
     <li>
-    PHP - Sivam
+    PHP / Helping - Sivam
     </li>
+
     <li>
-    Database - Kishav Rajpoot
+    Database - Keshav Rajpoot
     </li>
+
     <li>
-    Management - Vaibhav Bansal
+    Database / Integration - Vaibhav Bansal
     </li>
+    
  </ul>
 </h1>
+
 <h1>
     AWS Hosting / DevOps - Raj Shivhare
 </h1>
