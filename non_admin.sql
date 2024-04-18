@@ -2,11 +2,11 @@ drop database college;
 create database college;
 use college;
 create table branches(
-	id int not null primary key,
+	id int not null primary key auto_increment,
 	branch_name varchar(20) not null unique
 );
 create table clg_session(
-	id int not null primary key,
+	id int not null primary key auto_increment,
 	session_name varchar(10) not null unique
 );
 create table gender(
@@ -112,7 +112,65 @@ select * from student std
  inner join gender g on g.id = std.gender_id
  inner join users on users.id = std.user_id;
 
+SELECT std.id,
+	std_name,
+	guardian_name,
+	gmail,
+	phone_no,
+	guardian_phone_no,
+	dob,
+	gender_id,
+	password,
+	blood_grp,
+	address,
+	branch_id,
+	session_id,
+	user_id from student std
+        inner join branches bra on  bra.id = std.branch_id 
+        inner join clg_session cls on cls.id = std.session_id
+        inner join gender g on g.id = std.gender_id
+        inner join users on users.id = std.user_id where session_id = '2';
+
+SELECT std.id,
+	std_name,
+	guardian_name,
+	gmail,
+	phone_no,
+	guardian_phone_no,
+	dob,
+	gender,
+	password,
+	blood_grp,
+	address,
+	branch_name,
+	session_name
+	from student std
+        inner join branches bra on  bra.id = std.branch_id 
+        inner join clg_session cls on cls.id = std.session_id
+        inner join gender g on g.id = std.gender_id;
+
+
+-- insert into clg_session values (4,'2024-2027');
+select * from clg_session order by session_name desc limit 0 , 3 ;
+
+select count(*)+1, branch_name from student std
+ inner join branches bra on  bra.id = std.branch_id 
+ inner join clg_session cls on cls.id = std.session_id
+ inner join gender g on g.id = std.gender_id
+ inner join users on users.id = std.user_id
+ where cls.session_name = '2022-2025'
+ group by branch_name;
+
 select * from faculty fac
  inner join branches bra on  bra.id = fac.branch_id
  inner join gender g on g.id = fac.gender_id
  inner join users on users.id = fac.user_id;
+
+select count(*), branch_name from faculty fac
+ inner join branches bra on  bra.id = fac.branch_id
+ inner join gender g on g.id = fac.gender_id
+ inner join users on users.id = fac.user_id group by branch_name;
+ 
+ select count(*), branch_id from student group by branch_id;
+
+SELECT std.id, std_name, guardian_name, gmail, phone_no, guardian_phone_no, gender, blood_grp, branch_name, session_name from student std inner join branches bra on bra.id = std.branch_id inner join clg_session cls on cls.id = std.session_id inner join gender g on g.id = std.gender_id inner join users on users.id = std.user_id where session_id = 3 and branch_id = 1;

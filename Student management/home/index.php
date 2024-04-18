@@ -11,6 +11,9 @@
     <?php
         include('../main_nav.php');
     ?>
+    <h1>
+        Home page aayega
+    </h1>
 </body>
 
 </html>
