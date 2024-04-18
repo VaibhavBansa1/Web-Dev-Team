@@ -5,7 +5,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg Nav-bar" style="z-index:100;background-color: red;">
+    <nav class="navbar navbar-expand-lg Nav-bar" style="z-index:100;background-color: #e04747;">
         <div class="container-fluid">
             <div>
                 <img src="https://www.fujitsu.com/au/imagesgig5/Icon_Students_tcm98-3749853_tcm98-2750236-32.png" alt="" style="width:50px; height:50px;">
@@ -23,7 +23,7 @@
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <span class="text-white"><b>login as</b></span>
                         </a>
-                        <ul class="dropdown-menu" style="background-color: #99d2e5;">
+                        <ul class="dropdown-menu" style="background-color: #fdc4c3;">
                             <li><a class="dropdown-item" href="../student/">Student</a></li>
                             <li><a class="dropdown-item" href="../faculty/">Faculty</a></li>
                             <li><a class="dropdown-item" href="../admin/">Admin</a></li>
