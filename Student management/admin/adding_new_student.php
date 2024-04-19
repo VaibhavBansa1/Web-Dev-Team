@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (!(isset($_SESSION['id']) && $_SESSION['user'] == 'faculty')) {
+if (!(isset($_SESSION['id']) && $_SESSION['user'] == 'admin')) {
 	header("location:index.php");
 }
 
@@ -28,7 +28,7 @@ if (!(isset($_SESSION['id']) && $_SESSION['user'] == 'faculty')) {
 <body class="bg-success-subtle">
 	<?php
 		include('../main_nav.php');
-		include('./Faculty_navbar.php');
+		include('./admin_navbar.php');
     ?>
 
 	<h1 class="text-center"><u>Add Student</u></h1><br>

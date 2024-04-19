@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (!(isset($_SESSION['id']) && $_SESSION['user'] == 'faculty')) {
+if (!(isset($_SESSION['id']) && $_SESSION['user'] == 'admin')) {
 	header("location:index.php");
 }
 ?>

@@ -9,7 +9,7 @@
 <body>
     <?php
         include('../main_nav.php');
-        include('./Faculty_navbar.php');
+        include('./admin_navbar.php');
     ?>
     <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
   <div class="carousel-inner">

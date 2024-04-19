@@ -14,7 +14,7 @@
         <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0"> 
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="Faculty_home.php">Home</a>
+              <a class="nav-link active" aria-current="page" href="admin_home.php">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="students_detail.php">Students Data</a>

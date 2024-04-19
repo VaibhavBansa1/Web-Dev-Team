@@ -19,7 +19,7 @@ $_POST['update'] == $_SESSION['user_id'] ) {
 	$id = $_POST['update'];
 	include('../conn.php');
        
-	$sql = "UPDATE faculty set gmail = '$gmail', phone_no = '$phone_no', alt_phone_no = '$alt_phone_no', blood_grp = '$blood_grp', address = '$address', password = '$pass' WHERE id = '$id'";
+	$sql = "UPDATE admin set gmail = '$gmail', phone_no = '$phone_no', alt_phone_no = '$alt_phone_no', blood_grp = '$blood_grp', address = '$address', password = '$pass' WHERE id = '$id'";
 	if ( $conn->query($sql) ) {
         header("location:profile.php?&success=".true);
    	}

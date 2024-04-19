@@ -4,9 +4,9 @@
         $pass = $_POST['password'];
         // connection is in conn.php
         include("../admin_conn.php");
-        $sql = "SELECT id, password FROM admin WHERE password = '$pass' AND id = '$id';";
+        $sql = "SELECT id, password, gmail FROM admin WHERE password = '$pass' AND (id = '$id' OR gmail = '$id');";
         $result = $conn->query($sql)->fetch_assoc();
-        if (($result['password'] === $pass) && ($result['id'] === $id) ){
+        if (($result['password'] === $pass) && ($result['id'] === $id || $result['gmail'] === $id ) ){
             $charset = "QAZWSXEDCRFVTGBYHNUJMIKLOPqwertyuiopasdfghjklmnbvcxz1234567890";
             $session_id = ""; 
             for ($i = 0; $i < 25 ; $i++){
@@ -16,6 +16,7 @@
             session_start();
             $_SESSION['id'] = $session_id;
             $_SESSION['user'] = 'admin';
+            $_SESSION['user_id'] = $result['id'];
             header("location:profile.php");
         }
         else{
@@ -27,4 +28,3 @@
     else {
         header("Location:index.php");
     }
-?>

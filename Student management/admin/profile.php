@@ -1,6 +1,6 @@
 <?php
     session_start();
-    if(!(isset($_SESSION['id']) && isset($_SESSION['user_id']) && $_SESSION['user'] == 'faculty')){
+    if(!(isset($_SESSION['id']) && isset($_SESSION['user_id']) && $_SESSION['user'] == 'admin')){
         header("location:index.php");
     }
 ?>
@@ -14,28 +14,15 @@
 </head>
 <body>
     <?php
-        include('../main_nav.php');
-        include('Faculty_navbar.php');
+        include '../main_nav.php';
+        include 'admin_navbar.php';
     ?>
 
     <?php 
 			
         $get_id = $_SESSION['user_id'];
-        include '../conn.php' ;
-        $sql = "SELECT fac.id,
-        faculty_name,
-        gmail,
-        phone_no,
-        alt_phone_no,
-        dob,
-        gender,
-        password,
-        blood_grp,
-        address,
-        branch_name
-        from faculty fac
-            inner join branches bra on  bra.id = fac.branch_id 
-            inner join gender g on g.id = fac.gender_id where fac.id = '$get_id';";
+        include '../admin_conn.php' ;
+        $sql = "SELECT * from admin where id = '$get_id';";
 
 		$result = $conn->query($sql);
         $row = $result->fetch_assoc();
@@ -55,13 +42,13 @@
 		}
     ?>
         <h1>
-            Faculty personal profile
+            Admin personal profile
         </h1>
 
     <form class="row g-3 ms-5 me-5 mt-3 mb-5 border border-4 border-black fw-semibold" action="edit_profile.php" method="post">
 			<div class="col-md-6">
 				<label for="S_Name" class="form-label">Student Name</label>
-				<p class="form-control" id="S_Name" name="s_name"  ><?php echo $row['faculty_name']; ?></p>
+				<p class="form-control" id="S_Name" name="s_name"  ><?php echo $row['admin_name']; ?></p>
 			</div>
 			<!-- <div class="col-md-6">
 				<label for="G_Name" class="form-label">Guardian Name</label> -->
