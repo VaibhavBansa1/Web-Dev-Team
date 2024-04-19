@@ -42,10 +42,16 @@
         $row = $result->fetch_assoc();
 		if (isset($_GET['success'])) {
 			if($_GET['success'] == true) {
-				echo "<script>alert('Edited successfully')</script>";
+				echo "<script>
+					alert('Edited successfully');
+					location.href = './profile.php';
+				</script>";
 			}
 			else if($_GET['success'] == false) {
-				echo "<script>alert('Failed to Edit')</script>";
+				echo "<script>
+					alert('Failed to Edit');
+					location.href = './profile.php';
+				</script>";
 			}
 		}
     ?>
