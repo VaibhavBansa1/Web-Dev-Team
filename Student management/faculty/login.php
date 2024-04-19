@@ -1,6 +1,6 @@
 <?php
     if(isset($_POST['id']) && isset($_POST['password']) && isset($_POST['submit'])){
-        $id = $_POST['id'] ;
+        $id = $_POST['id'];
         $pass = $_POST['password'];
         // connection is in conn.php
         include("../conn.php");
@@ -16,6 +16,7 @@
             session_start();
             $_SESSION['id'] = $session_id;
             $_SESSION['user'] = 'faculty';
+            $_SESSION['user_id'] = $result['id'];
             header("location:students_detail.php");
         }
         else{

@@ -1,4 +1,4 @@
-<head>
+
     <style>
     </style>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
@@ -8,7 +8,7 @@
     <nav class="navbar navbar-expand-lg Nav-bar" style="z-index:100;background-color: #e04747;">
         <div class="container-fluid">
             <div>
-                <img src="https://www.fujitsu.com/au/imagesgig5/Icon_Students_tcm98-3749853_tcm98-2750236-32.png" alt="" style="width:50px; height:50px;">
+                <img src="../Logo.png" alt="" style="width:50px; height:50px;">
             </div>
             <!-- <a class="navbar-brand text-primary" href="#">Dr.BR.Ambedkar polytechnic college Gwalior</a> -->
             <button class="navbar-toggler bg-gradient" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">

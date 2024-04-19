@@ -48,7 +48,7 @@ if (!(isset($_SESSION['id']) && $_SESSION['user'] == 'faculty')) {
 					inner join branches bra on  bra.id = std.branch_id 
 					inner join clg_session cls on cls.id = std.session_id
 					inner join gender g on g.id = std.gender_id where std.id = '$get_id';";
-				$conn->query($sql);
+
 				$result = $conn->query($sql);
 				$row = $result->fetch_assoc();
 			}
@@ -60,20 +60,26 @@ if (!(isset($_SESSION['id']) && $_SESSION['user'] == 'faculty')) {
 			}
 			if (isset($_GET['success'])) {
 				if($_GET['success'] == true) {
-					echo "<script>alert('Edited successfully')</script>";
+					echo "<script>
+						alert('Edited successfully');
+					</script>";
 				}
 				else if($_GET['success'] == false) {
-					echo "<script>alert('Failed to Edit')</script>";
+					echo "<script>
+						alert('Failed to Edit');
+					</script>";
 				}
 			}
 			if (isset($_GET['delete_success'])) {
 				if($_GET['delete_success'] == false) {
-					echo "<script>alert('Failed to Delete')</script>";
+					echo "<script>
+						alert('Failed to Delete');
+					</script>";
 				}
 			}
 			
 		?>
-		<form class="row g-3 ms-5 me-5 mt-3 mb-5 border border-4 border-black fw-semibold" action="edit_student.php" method="get">
+		<form class="row g-3 ms-5 me-5 mt-3 mb-5 border border-4 border-black fw-semibold" action="edit_student.php" method="post">
 			<div class="col-md-6">
 				<label for="S_Name" class="form-label">Student Name</label>
 				<input type="text" class="form-control" id="S_Name" name="s_name" value="<?php echo $row['std_name']; ?>" required>
@@ -125,7 +131,7 @@ if (!(isset($_SESSION['id']) && $_SESSION['user'] == 'faculty')) {
 				<label for="Branch" class="form-label">Branch</label>
 				<select id="Branch" class="form-select" name="branch">
                     <?php
-                        include('../conn.php');
+                        include '../conn.php' ;
 						
 						$sql_branch = "SELECT * FROM branches ORDER BY branch_name ASC;";
 						$result = $conn->query($sql_branch);
