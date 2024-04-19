@@ -56,7 +56,7 @@
             Faculty personal profile
         </h1>
 
-    <form class="row g-3 ms-5 me-5 mt-3 mb-5 border border-4 border-black fw-semibold" action="edit_profile.php" method="get">
+    <form class="row g-3 ms-5 me-5 mt-3 mb-5 border border-4 border-black fw-semibold" action="edit_profile.php" method="post">
 			<div class="col-md-6">
 				<label for="S_Name" class="form-label">Student Name</label>
 				<p class="form-control" id="S_Name" name="s_name"  ><?php echo $row['faculty_name']; ?></p>
@@ -74,11 +74,10 @@
 			<div class="col-md-4">
 				<label for="Mobile" class="form-label">Mobile number</label>
 				<input type="tel" class="form-control" id="Mobile" name="mobile" value="<?php echo $row['phone_no']; ?>" required>
-
 			</div>
 			<div class="col-md-4">
-				<label for="G_Mobile" class="form-label">Guardian Mobile number</label>
-                <p class="form-control" id="S_Name" name="s_name"  ><?php echo $row['alt_phone_no']; ?></p>
+				<label for="alt_phone_no" class="form-label">Alternate Mobile number</label>
+				<input type="tel" class="form-control" id="alt_phone_no" name="alt_phone_no" value="<?php echo $row['alt_phone_no']; ?>" required>
 
 			</div>
 			<div class="col-md-4">
