@@ -12,7 +12,7 @@ create table admin (
 	blood_grp varchar(3),
 	address varchar(256) not null,
 	dob date not null,
-	user_type char(1) not null check(user_type IN ('sup_admin', 'admin'))
+	user_type char(9) not null check(user_type IN ('sup_admin', 'admin'))
 );
 
 insert into admin
