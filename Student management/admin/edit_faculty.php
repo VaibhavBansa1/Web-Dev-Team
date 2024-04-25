@@ -19,7 +19,7 @@ if (!(isset($_SESSION['id']) && $_SESSION['user'] == 'admin')) {
     $pass = $_POST['password'];
     $id = $_POST['update'];
 
-    include('../conn.php');
+    include '../conn.php';
 
     $sql = "UPDATE faculty set faculty_name = '$faculty_name' ,gmail = '$gmail' ,phone_no = '$phone_no' ,alt_phone_no = '$alt_phone_no' ,dob = '$dob' , gender_id = '$gender_id', blood_grp = '$blood_grp', address = '$address', branch_id = $branch_id, password = '$pass' WHERE id = '$id'";
     if ($conn->query($sql)) {
@@ -30,7 +30,7 @@ if (!(isset($_SESSION['id']) && $_SESSION['user'] == 'admin')) {
     $conn->close();
 } else if (isset($_GET['delete'])) {
     echo $delete_this_faculty = $_GET['delete'];
-    include('../conn.php');
+    include '../conn.php';
 
     echo $sql = "DELETE FROM faculty WHERE id = '$delete_this_faculty';";
     if ($conn->query($sql)) {

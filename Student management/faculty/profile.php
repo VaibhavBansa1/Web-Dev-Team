@@ -8,7 +8,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="shortcut icon" href="http://localhost/vaibhav/Web-Dev-Team/Student%20management/Logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../Logo.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
 </head>

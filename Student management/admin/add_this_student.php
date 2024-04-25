@@ -19,7 +19,7 @@ if (
     isset($_POST['session'])
 ) {
 
-    include('../conn.php');
+    include '../conn.php';
     $id = $_POST['rollno'];
     $std_name = $_POST['s_name'];
     $guardian_name = $_POST['g_name'];

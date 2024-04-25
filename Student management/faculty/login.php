@@ -3,7 +3,7 @@ if (isset($_POST['id']) && isset($_POST['password']) && isset($_POST['submit']))
     $id = $_POST['id'];
     $pass = $_POST['password'];
     // connection is in conn.php
-    include("../conn.php");
+    include "../conn.php";
     $sql = "SELECT id, password, gmail FROM faculty WHERE password = '$pass' AND (id = '$id' OR gmail = '$id');";
     $result = $conn->query($sql)->fetch_assoc();
     if (($result['password'] === $pass) && ($result['id'] === $id || $result['gmail'] === $id)) {

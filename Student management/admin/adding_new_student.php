@@ -3,13 +3,14 @@ session_start();
 if (!(isset($_SESSION['id']) && $_SESSION['user'] == 'admin')) {
     header("location:index.php");
 }
-
+include '../conn.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8" />
+    <link rel="shortcut icon" href="../Logo.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Add Student</title>
     <?php
@@ -26,8 +27,8 @@ if (!(isset($_SESSION['id']) && $_SESSION['user'] == 'admin')) {
 
 <body class="bg-success-subtle">
     <?php
-    include('../main_nav.php');
-    include('./admin_navbar.php');
+    include '../main_nav.php';
+    include './admin_navbar.php';
     ?>
 
     <h1 class="text-center"><u>Add Student</u></h1><br>
@@ -90,8 +91,6 @@ if (!(isset($_SESSION['id']) && $_SESSION['user'] == 'admin')) {
                 <select id="Branch" class="form-select" name="branch">
                     <option value='' selected>Branch..</option>
                     <?php
-                    include('../conn.php');
-
                     $sql_branch = "SELECT * FROM branches order by branch_name asc;";
                     $result = $conn->query($sql_branch);
                     if (!$result) {
@@ -108,8 +107,6 @@ if (!(isset($_SESSION['id']) && $_SESSION['user'] == 'admin')) {
                 <select id="Session" class="form-select" name="session">
                     <option value='' selected>Session..</option>
                     <?php
-                    include('../conn.php');
-
                     $sql_session = "SELECT * FROM clg_session order by session_name desc;";
                     $result = $conn->query($sql_session);
                     if (!$result) {

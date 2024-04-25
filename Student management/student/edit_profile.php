@@ -17,7 +17,7 @@ if (
 	$address = $_POST['address'];
 	$pass = $_POST['password'];
 	$id = $_POST['update'];
-	include('../conn.php');
+	include '../conn.php';
 
 	$sql = "UPDATE student set gmail = '$gmail', phone_no = '$phone_no', blood_grp = '$blood_grp', address = '$address', password = '$pass' WHERE id = '$id'";
 	if ($conn->query($sql)) {

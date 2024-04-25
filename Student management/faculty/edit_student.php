@@ -23,7 +23,7 @@ if (!(isset($_SESSION['id']) && $_SESSION['user'] == 'faculty')) {
     $address = $_POST['address'];
     $branch_id = $_POST['branch'];
     $id = $_POST['update'];
-    include('../conn.php');
+    include '../conn.php';
 
     $sql = "UPDATE student set std_name = '$std_name' ,guardian_name = '$guardian_name' ,gmail = '$gmail' ,phone_no = '$phone_no' ,guardian_phone_no = '$guardian_phone_no' ,dob = '$dob' ,blood_grp = '$blood_grp', address = '$address' ,branch_id = $branch_id WHERE id = '$id'";
     if ($conn->query($sql)) {
@@ -44,7 +44,7 @@ if (!(isset($_SESSION['id']) && $_SESSION['user'] == 'faculty')) {
     isset($_GET['delete'])
 ) {
     echo $delete_this_student = $_GET['delete'];
-    include('../conn.php');
+    include '../conn.php';
 
     echo $sql = "DELETE FROM student WHERE id = '$delete_this_student';";
     if ($conn->query($sql)) {

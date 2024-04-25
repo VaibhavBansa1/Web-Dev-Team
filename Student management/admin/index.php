@@ -18,6 +18,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../Logo.png" type="image/x-icon">
     <title>Admin Login</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
     <link rel="stylesheet" href="style.css">
@@ -26,7 +27,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user'])) {
 
 <body>
     <?php
-    include('../main_nav.php');
+    include '../main_nav.php';
     ?>
     <div class="login-form">
         <div class="title">

@@ -3,7 +3,7 @@ if (isset($_POST['id']) && isset($_POST['password']) && isset($_POST['submit']))
     $id = $_POST['id'];
     $pass = $_POST['password'];
     // connection is in conn.php
-    include("../admin_conn.php");
+    include "../admin_conn.php";
     $sql = "SELECT id, password, gmail FROM admin WHERE password = '$pass' AND (id = '$id' OR gmail = '$id');";
     $result = $conn->query($sql)->fetch_assoc();
     if (($result['password'] === $pass) && ($result['id'] === $id || $result['gmail'] === $id)) {
@@ -17,7 +17,7 @@ if (isset($_POST['id']) && isset($_POST['password']) && isset($_POST['submit']))
         $_SESSION['id'] = $session_id;
         $_SESSION['user'] = 'admin';
         $_SESSION['user_id'] = $result['id'];
-        header("location:profile.php");
+        header("location:./admin_home.php");
     } else {
         header("location:index.php?fail=" . true);
     }

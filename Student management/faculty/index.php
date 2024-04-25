@@ -19,6 +19,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Faculty Login</title>
+    <link rel="shortcut icon" href="../Logo.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
     <link rel="stylesheet" href="style.css">
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script> -->
@@ -26,7 +27,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user'])) {
 
 <body>
     <?php
-    include('../main_nav.php');
+    include '../main_nav.php';
     ?>
     <div class="login-form">
         <div class="title">
