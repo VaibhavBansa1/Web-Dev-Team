@@ -102,7 +102,6 @@
 					<?php 
 						$row_blood = [ 'A+' , 'A-' , 'B+' , 'B-' , 'AB+' , 'AB-' , 'O+' , 'O-' ];
 						foreach ($row_blood as $key) {
-							echo $key;
 							$selected = ($key === $row['blood_grp']) ? 'selected' : '';
                             echo "<option value='".$key."'".$selected.">".$key."</option>";
 						}

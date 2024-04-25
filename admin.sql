@@ -2,17 +2,17 @@ drop database if exists admin_info;
 create database admin_info;
 use admin_info;
 create table admin (
-	id varchar(15) primary key,
-	admin_name varchar(50) not null check (length(admin_name) > 0),
-	password varchar(20) not null check (length(password) >= 8),
-	gmail varchar(50) not null check (length(gmail) > 10) unique, -- only gmail 🗿🗿
-	phone_no varchar(10) not null unique,
-	alt_phone_no varchar(10) not null unique,
-	gender varchar(6) not null check(gender IN ('Male', 'Female', 'Other')),
-	blood_grp varchar(3),
-	address varchar(256) not null,
-	dob date not null,
-	user_type char(9) not null check(user_type IN ('sup_admin', 'admin'))
+    id varchar(15) primary key,
+    admin_name varchar(50) not null check (length(admin_name) > 0),
+    password varchar(20) not null check (length(password) >= 8),
+    gmail varchar(50) not null check (length(gmail) > 10) unique, -- only gmail 🗿🗿
+    phone_no varchar(10) not null unique,
+    alt_phone_no varchar(10) not null unique,
+    gender varchar(6) not null check(gender IN ('Male', 'Female', 'Other')),
+    blood_grp varchar(3),
+    address varchar(256) not null,
+    dob date not null,
+    user_type char(9) not null check(user_type IN ('sup_admin', 'admin'))
 );
 
 insert into admin

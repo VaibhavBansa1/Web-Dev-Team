@@ -1,30 +1,28 @@
 <?php
-    if(isset($_POST['id']) && isset($_POST['password']) && isset($_POST['submit'])){
-        $id = $_POST['id'];
-        $pass = $_POST['password'];
-        // connection is in conn.php
-        include("../admin_conn.php");
-        $sql = "SELECT id, password, gmail FROM admin WHERE password = '$pass' AND (id = '$id' OR gmail = '$id');";
-        $result = $conn->query($sql)->fetch_assoc();
-        if (($result['password'] === $pass) && ($result['id'] === $id || $result['gmail'] === $id ) ){
-            $charset = "QAZWSXEDCRFVTGBYHNUJMIKLOPqwertyuiopasdfghjklmnbvcxz1234567890";
-            $session_id = ""; 
-            for ($i = 0; $i < 25 ; $i++){
-                $rand_int = rand(0,61) ;
-                $session_id = $session_id . $charset[$rand_int] ;
-            }
-            session_start();
-            $_SESSION['id'] = $session_id;
-            $_SESSION['user'] = 'admin';
-            $_SESSION['user_id'] = $result['id'];
-            header("location:profile.php");
+if (isset($_POST['id']) && isset($_POST['password']) && isset($_POST['submit'])) {
+    $id = $_POST['id'];
+    $pass = $_POST['password'];
+    // connection is in conn.php
+    include("../admin_conn.php");
+    $sql = "SELECT id, password, gmail FROM admin WHERE password = '$pass' AND (id = '$id' OR gmail = '$id');";
+    $result = $conn->query($sql)->fetch_assoc();
+    if (($result['password'] === $pass) && ($result['id'] === $id || $result['gmail'] === $id)) {
+        $charset = "QAZWSXEDCRFVTGBYHNUJMIKLOPqwertyuiopasdfghjklmnbvcxz1234567890";
+        $session_id = "";
+        for ($i = 0; $i < 25; $i++) {
+            $rand_int = rand(0, 61);
+            $session_id = $session_id . $charset[$rand_int];
         }
-        else{
-            header("location:index.php?fail=".true);
-        }
+        session_start();
+        $_SESSION['id'] = $session_id;
+        $_SESSION['user'] = 'admin';
+        $_SESSION['user_id'] = $result['id'];
+        header("location:profile.php");
+    } else {
+        header("location:index.php?fail=" . true);
+    }
 
-        $conn->close();
-    }
-    else {
-        header("Location:index.php");
-    }
+    $conn->close();
+} else {
+    header("Location:index.php");
+}

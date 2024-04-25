@@ -1,7 +1,7 @@
 create database coders_cafe;
 use coders_cafe;
 create table members(
-	id varchar(15) primary key,
+    id varchar(15) primary key,
     password varchar(15) not null
 );
 -- create table faculty(
@@ -19,7 +19,7 @@ insert into members values('22BRACS01','poly807698'),('22BRACS02','poly807698'),
 -- session management table
 
 create table user_session(
-	session_id varchar(11) not null primary,
+    session_id varchar(11) not null primary,
     roll_no varchar(10),
     foreign key ()
 );

@@ -2,19 +2,19 @@ drop database college;
 create database college;
 use college;
 create table branches(
-	id int not null primary key auto_increment,
-	branch_name varchar(20) not null unique
+    id int not null primary key auto_increment,
+    branch_name varchar(20) not null unique
 );
 create table clg_session(
-	id int not null primary key auto_increment,
-	session_name varchar(10) not null unique
+    id int not null primary key auto_increment,
+    session_name varchar(10) not null unique
 );
 create table gender(
     id char(1) primary key check(id IN ('M', 'F', 'O')),
     gender varchar(10) not null unique check(gender IN ('Male', 'Female', 'Other'))
 );
 create table users(
-	id char(1) primary key check(id IN ('S', 'F')),
+    id char(1) primary key check(id IN ('S', 'F')),
     user char(7) not null unique check(user IN ('Student', 'Faculty'))
 );
 -- create table session_manage(
@@ -23,19 +23,19 @@ create table users(
 -- 	u_id varchar(15)
 -- );
 insert into branches values (1 ,'C.S.E'),
-						    (2, 'I.T'),
-						    (3, 'E.E');
+                            (2, 'I.T'),
+                            (3, 'E.E');
 
 insert into clg_session values (1 ,'2021-2024'),
-							   (2 ,'2022-2025'),
-							   (3 ,'2023-2026');
+                               (2 ,'2022-2025'),
+                               (3 ,'2023-2026');
 
 insert into gender values ('M','Male'),
-						  ('F','Female'),
-						  ('O','Other');
+                          ('F','Female'),
+                          ('O','Other');
 
 insert into users values ('S','Student'),
-						  ('F','Faculty');
+                          ('F','Faculty');
 
 select * from branches;
 select * from clg_session;
@@ -46,24 +46,24 @@ select * from users;
 -- create table faculty_photo();
 
 create table student (
-	id varchar(15) primary key not null, -- roll no
-	std_name varchar(50) not null check (length(std_name) > 0),
-	guardian_name varchar(50) not null check (length(guardian_name) > 0),
-	gmail varchar(50) not null check (length(gmail) > 10) unique, -- only gmail 🗿🗿
-	phone_no varchar(10) not null unique,
-	guardian_phone_no varchar(10) not null unique,
-	dob date not null,
-	gender_id char(1) not null check(gender_id IN ('M', 'F', 'O')),
-	password varchar(20) not null check (length(password) >= 8),
-	blood_grp varchar(3),
-	address varchar(256) not null,
-	branch_id int not null check (branch_id > 0), -- this student table will be the child of branch table
-	session_id int not null check (session_id > 0), --  this session table will be the child of branch table
-	user_id char(1) not null check(user_id IN ('S')) default 'S',
-	foreign key (gender_id) references gender(id),
-	foreign key (branch_id) references branches(id),
-	foreign key (session_id) references clg_session(id),
-	foreign key (user_id) references users(id)
+    id varchar(15) primary key not null, -- roll no
+    std_name varchar(50) not null check (length(std_name) > 0),
+    guardian_name varchar(50) not null check (length(guardian_name) > 0),
+    gmail varchar(50) not null check (length(gmail) > 10) unique, -- only gmail 🗿🗿
+    phone_no varchar(10) not null unique,
+    guardian_phone_no varchar(10) not null unique,
+    dob date not null,
+    gender_id char(1) not null check(gender_id IN ('M', 'F', 'O')),
+    password varchar(20) not null check (length(password) >= 8),
+    blood_grp varchar(3),
+    address varchar(256) not null,
+    branch_id int not null check (branch_id > 0), -- this student table will be the child of branch table
+    session_id int not null check (session_id > 0), --  this session table will be the child of branch table
+    user_id char(1) not null check(user_id IN ('S')) default 'S',
+    foreign key (gender_id) references gender(id),
+    foreign key (branch_id) references branches(id),
+    foreign key (session_id) references clg_session(id),
+    foreign key (user_id) references users(id)
 );
 
 insert into student 
@@ -77,21 +77,21 @@ SELECT * FROM  student;
 
 
 create table faculty(
-	id varchar(15) primary key,
-	faculty_name varchar(50) not null check (length(faculty_name) > 0),
-	password varchar(20) not null check (length(password) >= 8),
-	gmail varchar(50) not null check (length(gmail) > 10) unique, -- only gmail 🗿🗿
-	phone_no varchar(10) not null unique,
-	alt_phone_no varchar(10) not null unique,
-	gender_id char(1) not null check(gender_id IN ('M', 'F', 'O')),
-	blood_grp varchar(3),
-	address varchar(256) not null,
-	dob date not null,
-	branch_id int not null check (branch_id > 0), -- this student table will be the child of branch table
-	user_id char(1) not null check(user_id IN ('F')) default 'F',
-	foreign key (gender_id) references gender(id),
-	foreign key (branch_id) references branches(id),
-	foreign key (user_id) references users(id)
+    id varchar(15) primary key,
+    faculty_name varchar(50) not null check (length(faculty_name) > 0),
+    password varchar(20) not null check (length(password) >= 8),
+    gmail varchar(50) not null check (length(gmail) > 10) unique, -- only gmail 🗿🗿
+    phone_no varchar(10) not null unique,
+    alt_phone_no varchar(10) not null unique,
+    gender_id char(1) not null check(gender_id IN ('M', 'F', 'O')),
+    blood_grp varchar(3),
+    address varchar(256) not null,
+    dob date not null,
+    branch_id int not null check (branch_id > 0), -- this student table will be the child of branch table
+    user_id char(1) not null check(user_id IN ('F')) default 'F',
+    foreign key (gender_id) references gender(id),
+    foreign key (branch_id) references branches(id),
+    foreign key (user_id) references users(id)
 );
 
 insert into faculty
@@ -113,38 +113,38 @@ select * from student std
  inner join users on users.id = std.user_id;
 
 SELECT std.id,
-	std_name,
-	guardian_name,
-	gmail,
-	phone_no,
-	guardian_phone_no,
-	dob,
-	gender_id,
-	password,
-	blood_grp,
-	address,
-	branch_id,
-	session_id,
-	user_id from student std
+    std_name,
+    guardian_name,
+    gmail,
+    phone_no,
+    guardian_phone_no,
+    dob,
+    gender_id,
+    password,
+    blood_grp,
+    address,
+    branch_id,
+    session_id,
+    user_id from student std
         inner join branches bra on  bra.id = std.branch_id 
         inner join clg_session cls on cls.id = std.session_id
         inner join gender g on g.id = std.gender_id
         inner join users on users.id = std.user_id where session_id = '2';
 
 SELECT std.id,
-	std_name,
-	guardian_name,
-	gmail,
-	phone_no,
-	guardian_phone_no,
-	dob,
-	gender,
-	password,
-	blood_grp,
-	address,
-	branch_name,
-	session_name
-	from student std
+    std_name,
+    guardian_name,
+    gmail,
+    phone_no,
+    guardian_phone_no,
+    dob,
+    gender,
+    password,
+    blood_grp,
+    address,
+    branch_name,
+    session_name
+    from student std
         inner join branches bra on  bra.id = std.branch_id 
         inner join clg_session cls on cls.id = std.session_id
         inner join gender g on g.id = std.gender_id;

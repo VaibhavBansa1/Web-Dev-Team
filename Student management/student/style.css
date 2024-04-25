@@ -3,10 +3,12 @@
     padding: 0px;
     box-sizing: border-box;
 }
+
 body {
     font-family: "Roboto", sans-serif;
     background: #f5f5f5;
 }
+
 .login-form {
     position: absolute;
     top: 50%;
@@ -18,31 +20,36 @@ body {
     padding: 20px 30px;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
 }
+
 .login-form .title {
-    font-family:"Montserrat", sans-serif;
+    font-family: "Montserrat", sans-serif;
     text-align: center;
     font-size: 30px;
     font-weight: 900;
     margin: 20px 0px 30px;
     color: #111;
 }
+
 .login-form .input {
     margin: 10px 0px;
 }
+
 .login-form .input label,
 .login-form .captcha label {
-    display:block;
+    display: block;
     font-size: 15px;
     font-weight: 800;
     color: #111;
     margin-bottom: 5px;
 }
+
 .login-form .input input {
     width: 100%;
     padding: 10px;
     font-size: 15px;
     border: 1px solid #888;
 }
+
 /* .login-form .captcha {
     margin: 15px 0px;
 }
@@ -77,7 +84,7 @@ body {
     color: #eee;
     cursor: pointer;
 } */
-.login-form .loginb{
+.login-form .loginb {
     margin-top: 10px;
     width: 100%;
     padding: 10px;
@@ -90,7 +97,8 @@ body {
     cursor: pointer;
     border-radius: 6px;
 }
-.login-form .loginb.active{
+
+.login-form .loginb.active {
     margin-top: 10px;
     width: 100%;
     padding: 10px;
@@ -103,6 +111,7 @@ body {
     cursor: pointer;
     border-radius: 6px;
 }
+
 /* .login-form .g-cap {
     border: 1px solid #888;
     height: 50px;

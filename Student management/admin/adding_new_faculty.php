@@ -13,22 +13,21 @@ if (!(isset($_SESSION['id']) && $_SESSION['user'] == 'admin')) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Add Faculty</title>
     <?php
-        if (isset($_GET['success'])) {
-            if($_GET['success'] == true) {
-                echo "<script>alert('Added successfully')</script>";
-            }
-            else if($_GET['success'] == false) {
-                echo "<script>alert('Failed to add')</script>";
-            }
+    if (isset($_GET['success'])) {
+        if ($_GET['success'] == true) {
+            echo "<script>alert('Added successfully')</script>";
+        } else if ($_GET['success'] == false) {
+            echo "<script>alert('Failed to add')</script>";
         }
+    }
     ?>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
 </head>
 
 <body class="bg-success-subtle">
     <?php
-        include '../main_nav.php';
-        include './admin_navbar.php';
+    include '../main_nav.php';
+    include './admin_navbar.php';
     ?>
 
     <h1 class="text-center"><u>Add Faculty</u></h1><br>
@@ -87,21 +86,20 @@ if (!(isset($_SESSION['id']) && $_SESSION['user'] == 'admin')) {
                 <select id="Branch" class="form-select" name="branch">
                     <option value='' selected>Branch..</option>
                     <?php
-                        include '../conn.php';
-                        
-                        $sql_branch = "SELECT * FROM branches order by branch_name asc;";
-                        $result = $conn->query($sql_branch);
-                        if(!$result)
-                        {
-                            die("Invalid query: " . $conn->error);
-                        }
-                        while ($row_branch = $result->fetch_assoc()) {
-                            echo "<option value=".$row_branch['id'].">".$row_branch['branch_name']."</option> ";
-                        }
+                    include '../conn.php';
+
+                    $sql_branch = "SELECT * FROM branches order by branch_name asc;";
+                    $result = $conn->query($sql_branch);
+                    if (!$result) {
+                        die("Invalid query: " . $conn->error);
+                    }
+                    while ($row_branch = $result->fetch_assoc()) {
+                        echo "<option value=" . $row_branch['id'] . ">" . $row_branch['branch_name'] . "</option> ";
+                    }
                     ?>
                 </select>
             </div>
-            
+
             <div class="col-md-6">
                 <label for="faculty_id" class="form-label">Facutly ID</label>
                 <input type="text" class="form-control" id="faculty_id" name="faculty_id" required>
