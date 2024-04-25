@@ -14,7 +14,10 @@
     <title>Presets</title>
 </head>
 <body>
-    <?php include('../main_nav.php'); ?>
+    <?php 
+        include '../main_nav.php'; 
+        include './admin_navbar.php'; 
+    ?>
     <h1>
         Presets
     </h1>
@@ -25,7 +28,7 @@
         
         <ul id="Branch">
                     <?php
-                        include('../conn.php');
+                        include '../conn.php';
                         
                         $sql_branch = "SELECT * FROM branches order by branch_name asc;";
                         $result = $conn->query($sql_branch);
@@ -44,7 +47,7 @@
         </h2>
         <ul id="Session">
             <?php
-                include('../conn.php');
+                include '../conn.php';
                 
                 $sql_session = "SELECT * FROM clg_session order by session_name desc;";
                 $result = $conn->query($sql_session);

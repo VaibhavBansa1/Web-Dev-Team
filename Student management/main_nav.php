@@ -15,20 +15,74 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav ms-2">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="../home"><span class="text-white"><b>Home</b></span></a>
+                        <a class="nav-link active" aria-current="page" href="../home">
+                            <span class="text-white">
+                                <b>
+                                    Home
+                                </b>
+                            </span>
+                        </a>
                     </li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="../student">
+                            <span class="text-white">
+                                <b>
+                                    Student Login
+                                </b>
+                            </span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="../faculty">
+                            <span class="text-white">
+                                <b>
+                                    Faculty Login
+                                </b>
+                            </span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="../admin">
+                            <span class="text-white">
+                                <b>
+                                    Admin Login
+                                </b>
+                            </span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="../home/about.php">
+                            <span class="text-white">
+                                <b>
+                                    About
+                                </b>
+                            </span>
+                        </a>
+                    </li>
+                    <!-- <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <span class="text-white"><b>login as</b></span>
                         </a>
                         <ul class="dropdown-menu" style="background-color: #fdc4c3;">
-                            <li><a class="dropdown-item" href="../student/">Student</a></li>
-                            <li><a class="dropdown-item" href="../faculty/">Faculty</a></li>
-                            <li><a class="dropdown-item" href="../admin/">Admin</a></li>
+                            <li>
+                                <a class="dropdown-item" href="../student/">
+                                    Student
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="../faculty/">
+                                    Faculty
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="../admin/">
+                                    Admin
+                                </a>
+                            </li>
                         </ul>
-                    </li>
+                    </li> -->
                     <?php
                     session_status();
                     if(isset($_SESSION['id'])) {

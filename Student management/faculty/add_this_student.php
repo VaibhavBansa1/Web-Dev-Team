@@ -45,5 +45,5 @@
         $conn->close();
     }
     else {
-        // header("location:adding_new_student.php");
+        header("location:adding_new_student.php");
     }

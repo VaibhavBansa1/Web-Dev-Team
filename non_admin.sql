@@ -50,8 +50,8 @@ create table student (
 	std_name varchar(50) not null check (length(std_name) > 0),
 	guardian_name varchar(50) not null check (length(guardian_name) > 0),
 	gmail varchar(50) not null check (length(gmail) > 10) unique, -- only gmail 🗿🗿
-	phone_no varchar(16) not null unique,
-	guardian_phone_no varchar(16) not null unique,
+	phone_no varchar(10) not null unique,
+	guardian_phone_no varchar(10) not null unique,
 	dob date not null,
 	gender_id char(1) not null check(gender_id IN ('M', 'F', 'O')),
 	password varchar(20) not null check (length(password) >= 8),
@@ -68,10 +68,10 @@ create table student (
 
 insert into student 
 values
-('22BRACS01','student1','guardian1','student1@gmail.com','+91 789 456 1231','+91 789 456 1231','2006-01-03','M',"password",'B+','address blabla bla bla',1,2,'S'),
-('22BRACS02','student2','guardian2','student2@gmail.com','+91 789 456 1232','+91 789 456 1232','2006-01-03','M',"password",'B+','address blabla bla bla',1,2,'S'),
-('22BRACS03','student3','guardian3','student3@gmail.com','+91 789 456 1233','+91 789 456 1233','2006-01-03','M',"password",'B+','address blabla bla bla',1,1,'S'),
-('22BRACS04','student4','guardian4','student4@gmail.com','+91 789 456 1234','+91 789 456 1234','2006-01-03','M',"password",'B+','address blabla bla bla',1,1,'S');
+('22BRACS01','student1','guardian1','student1@gmail.com','7894561231','7894561241','2006-01-03','M',"password",'B+','address blabla bla bla',1,2,'S'),
+('22BRACS02','student2','guardian2','student2@gmail.com','7894561232','7894561242','2006-01-03','M',"password",'B+','address blabla bla bla',1,2,'S'),
+('22BRACS03','student3','guardian3','student3@gmail.com','7894561233','7894561243','2006-01-03','M',"password",'B+','address blabla bla bla',1,1,'S'),
+('22BRACS04','student4','guardian4','student4@gmail.com','7894561234','7894561244','2006-01-03','M',"password",'B+','address blabla bla bla',1,1,'S');
 
 SELECT * FROM  student;
 
@@ -81,8 +81,8 @@ create table faculty(
 	faculty_name varchar(50) not null check (length(faculty_name) > 0),
 	password varchar(20) not null check (length(password) >= 8),
 	gmail varchar(50) not null check (length(gmail) > 10) unique, -- only gmail 🗿🗿
-	phone_no varchar(16) not null unique,
-	alt_phone_no varchar(16) not null unique,
+	phone_no varchar(10) not null unique,
+	alt_phone_no varchar(10) not null unique,
 	gender_id char(1) not null check(gender_id IN ('M', 'F', 'O')),
 	blood_grp varchar(3),
 	address varchar(256) not null,
@@ -174,3 +174,14 @@ select count(*), branch_name from faculty fac
  select count(*), branch_id from student group by branch_id;
 
 SELECT std.id, std_name, guardian_name, gmail, phone_no, guardian_phone_no, gender, blood_grp, branch_name, session_name from student std inner join branches bra on bra.id = std.branch_id inner join clg_session cls on cls.id = std.session_id inner join gender g on g.id = std.gender_id inner join users on users.id = std.user_id where session_id = 3 and branch_id = 1;
+
+SELECT fac.id,
+    faculty_name,
+    gmail,
+    phone_no,
+    alt_phone_no,
+    gender,
+    blood_grp,
+    branch_name from faculty fac
+    inner join branches bra on  bra.id = fac.branch_id 
+    inner join gender g on g.id = fac.gender_id

@@ -48,23 +48,21 @@
 
             <select name="branch_id" id="search-by-branch">
                 <option value='' selected>Branch..</option>
-                    <?php
-                        // include('../conn.php');
-						
-						$sql_branch = "SELECT * FROM branches order by branch_name asc;";
-						$result = $conn->query($sql_branch);
-						if(!$result)
-						{
-							die("Invalid query: " . $conn->error);
-						}
-						while ($row_branch = $result->fetch_assoc()) {
-                            if (isset($_GET['session_id'])) {
+                    <?php						
+                        $sql_branch = "SELECT * FROM branches order by branch_name asc;";
+                        $result = $conn->query($sql_branch);
+                        if(!$result)
+                        {
+                            die("Invalid query: " . $conn->error);
+                        }
+                        while ($row_branch = $result->fetch_assoc()) {
+                            if (isset($_GET['branch_id'])) {
                                 $selected = ($row_branch['id'] === $_GET['branch_id']) ? 'selected' : '';
                             }
-							echo "<option value='".$row_branch['id']."' ".$selected.">".$row_branch['branch_name']."</option> ";
-						}
+                            echo "<option value='".$row_branch['id']."' ".$selected.">".$row_branch['branch_name']."</option> ";
+                        }
                         $conn->close();
-					?>
+                    ?>
             </select>
                 
             <button type="submit" class="btn btn-dark">Search</button>
