@@ -18,7 +18,7 @@
            Database - Keshav Rajpoot
        </li>
        <li>
-           Database / Integration - Vaibhav Bansal
+           Database / Integration / Everything - Vaibhav Bansal
        </li>
     </ul>
 </h1>
