@@ -25,16 +25,18 @@ include '../conn.php';
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
 </head>
 
-<body class="bg-success-subtle">
+<body>
     <?php
     include '../main_nav.php';
     include './admin_navbar.php';
     ?>
 
-    <h1 class="text-center"><u>Add Student</u></h1><br>
     <div>
+        <form class="row g-3 ms-5 me-5 mt-3 mb-5 border border-4 border-black fw-semibold bg-success-subtle" action="./add_this_student.php" method="post" style="border-radius:2rem;">
 
-        <form class="row g-3 ms-5 me-5 mt-3 mb-5 border border-4 border-black fw-semibold" action="./add_this_student.php" method="post">
+            <h1 class="text-center"><u>Add Student</u></h1><br>
+
+            <hr>
             <div class="col-md-6">
                 <label for="S_Name" class="form-label">Student Name</label>
                 <input type="text" class="form-control" id="S_Name" name="s_name" required>

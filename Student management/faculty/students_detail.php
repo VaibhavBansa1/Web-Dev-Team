@@ -21,10 +21,13 @@ include '../conn.php';
     include '../main_nav.php';
     include './Faculty_navbar.php';
     ?>
-    <div class="container">
+    <div class="text-center text-white pt-1 pb-1"  style="z-index:100;background-color: #e04747;">
+        <h1>Student Details</h1>
+    </div>
+    <div class="text-end pt-2 pb-2">
         <form action="students_detail.php" method="get">
             <span>
-                Search by:
+                <b>Search by:</b>
             </span>
             <select name="session_id" id="search-by-session">
                 <option value='' selected>Session and Year..</option>
@@ -65,9 +68,9 @@ include '../conn.php';
                 ?>
             </select>
 
-            <button type="submit" class="btn btn-dark">Search</button>
+            <button type="submit" class="btn btn-outline-danger">Search</button>
             <a href="./students_detail.php">
-                <button type="button" class="btn btn-dark">Show all student</button>
+                <button type="button" class="btn btn-outline-danger">Show all student</button>
             </a>
         </form>
     </div>

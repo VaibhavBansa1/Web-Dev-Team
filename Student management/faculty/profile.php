@@ -54,13 +54,12 @@
             }
         }
     ?>
-        <h1>
-            Faculty personal profile
-        </h1>
 
-    <form class="row g-3 ms-5 me-5 mt-3 mb-5 border border-4 border-black fw-semibold" action="edit_profile.php" method="post">
+        <form class="row g-3 ms-5 me-5 mt-3 mb-5 border border-4 border-black fw-semibold bg-success-subtle" action="edit_profile.php" method="post" style="border-radius: 2rem;">
+             <h1 class="text-center"><u>Faculty personal profile</u></h1>
+             <hr>
             <div class="col-md-6">
-                <label for="S_Name" class="form-label">Student Name</label>
+                <label for="S_Name" class="form-label">Name</label>
                 <p class="form-control" id="S_Name" name="s_name"  ><?php echo $row['faculty_name']; ?></p>
             </div>
             <!-- <div class="col-md-6">
@@ -135,12 +134,23 @@
                 <label for="Password" class="form-label">Password</label>
                 <div class="d-flex">
                     <input type="password" class="form-control" id="Password" name="password" value="<?php echo $row['password']; ?>"required>
-                    <button type="button" class="btn btn-outline-info ms-2">🔏</button>
+                    <button type="button" class="btn btn-outline-info ms-2" onclick="showpassword()">🔏</button>
                 </div>
             </div>
             <div class="col-12">
                 <button type="submit" class="btn btn-primary d-grid gap-2 col-6 mx-auto mb-3 mt-3" name="update" value="<?php echo $row['id']; ?>">Edit Details</button>
             </div>
         </form>
+        <script>
+            function showpassword(){
+                x = document.getElementById("Password"); 
+                if(x.type=="password"){
+                    x.type="text";
+                }
+                else{
+                    x.type="password";
+                }
+            }
+        </script>
 </body>
 </html>

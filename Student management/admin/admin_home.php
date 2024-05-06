@@ -23,13 +23,13 @@ if (!(isset($_SESSION['id']) && isset($_SESSION['user_id']) && $_SESSION['user']
     <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="https://i1.wp.com/www.freestudentprojects.com/wp-content/uploads/2017/06/Organization-Student-Management-System.jpg?resize=840%2C369" class="d-block w-100" alt="...">
+                <img src="../Designer (3).png" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="https://cdn.newsday.com/ace/c:YzBmM2Y0ZjUtMWVkZi00:NGNjMjQ2/landscape/1280" class="d-block w-100" alt="...">
+                <img src="../Designer (2).png" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="https://th.bing.com/th/id/R.b7ebe3633d73565ce640ba2492af6788?rik=feVsRQKdbB1hHw&riu=http%3a%2f%2fwww.purdue.edu%2fhhs%2flife360%2ffall2012%2fimg%2flarge_classroom.jpg&ehk=l0XZvVnVonAFDmmVjGfX4gtd6OxppVqI3qtEunBPvl8%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1" class="d-block w-100" alt="...">
+                <img src="../Designer (1).png" class="d-block w-100" alt="...">
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
