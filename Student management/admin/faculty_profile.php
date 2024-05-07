@@ -63,21 +63,22 @@ if (isset($_GET['delete_success'])) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
 </head>
 
-<body class="bg-success-subtle">
+<body>
 
     <?php
     include '../main_nav.php';
     include './admin_navbar.php';
     ?>
 
-    <h1 class="text-center"><u>Edit Faculty</u></h1><br>
     <div>
-        <form class="row g-3 ms-5 me-5 mt-3 mb-5 border border-4 border-black fw-semibold" action="edit_faculty.php" method="post">
+        <form class="row g-3 ms-5 me-5 mt-3 mb-5 border border-4 border-black fw-semibold bg-success-subtle" action="edit_faculty.php" method="post" style="border-radius: 2rem;">
+            <h1 class="text-center"><u>Edit Faculty</u></h1><br>
+            <hr>
             <div class="col-md-6">
                 <label for="faculty_name" class="form-label">Faculty Name</label>
                 <input type="text" class="form-control" id="faculty_name" name="faculty_name" value="<?php echo $row['faculty_name']; ?>" required>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <label for="Gmail" class="form-label">Gmail</label>
                 <input type="email" class="form-control" id="Gmail" placeholder="Enter Gmail" name="gmail" value="<?php echo $row['gmail']; ?>" required>
             </div>
@@ -92,6 +93,10 @@ if (isset($_GET['delete_success'])) {
             <div class="col-md-4">
                 <label for="DOB" class="form-label">DOB</label>
                 <input type="date" class="form-control" id="DOB" name="dob" value="<?php echo $row['dob']; ?>" required>
+            </div>
+            <div class="col-12">
+                <label for="Address" class="form-label">Address</label>
+                <input type="text" class="form-control" id="Address" name="address" value="<?php echo $row['address']; ?>" required>
             </div>
             <div class="col-md-4">
                 <label for="Gender" class="form-label">Gender</label>
@@ -117,11 +122,7 @@ if (isset($_GET['delete_success'])) {
                     ?>
                 </select>
             </div>
-            <div class="col-12">
-                <label for="Address" class="form-label">Address</label>
-                <input type="text" class="form-control" id="Address" name="address" value="<?php echo $row['address']; ?>" required>
-            </div>
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <label for="Branch" class="form-label">Branch</label>
                 <select id="Branch" class="form-select" name="branch">
                     <?php
@@ -147,9 +148,20 @@ if (isset($_GET['delete_success'])) {
                 <label for="Password" class="form-label">Password</label>
                 <div class="d-flex">
                     <input type="password" class="form-control" id="Password" name="password" value="<?php echo $row['password']; ?>" required>
-                    <button type="button" class="btn btn-outline-info ms-2">🔏</button>
+                    <button type="button" class="btn btn-outline-info ms-2" onclick="showpassword()">🔏</button>
                 </div>
             </div>
+            <script>
+            function showpassword(){
+                x = document.getElementById("Password"); 
+                if(x.type=="password"){
+                    x.type="text";
+                }
+                else{
+                    x.type="password";
+                }
+            }
+        </script>
             <div class="col-12">
                 <button type="submit" class="btn btn-primary d-grid gap-2 col-6 mx-auto mb-3 mt-3" name="update" value="<?php echo $row['id']; ?>">Edit Faculty</button>
                 <button type="submit" class="btn btn-danger d-grid gap-2 col-6 mx-auto mb-3 mt-3" name="delete" formmethod="get" value="<?php echo $row['id']; ?>">Delete Faculty</button>

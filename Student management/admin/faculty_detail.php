@@ -21,10 +21,13 @@ include '../conn.php';
     include '../main_nav.php';
     include './admin_navbar.php';
     ?>
-    <div class="container">
+    <div class="text-center text-white pt-1 pb-1"  style="z-index:100;background-color: #e04747;">
+        <h1>Faculty Details</h1>
+    </div>
+    <div class="text-end pt-2 pb-2">
         <form action="faculty_detail.php" method="get">
             <span>
-                Search by:
+                <b>Search by:</b>
             </span>
 
             <select name="branch_id" id="search-by-branch">
@@ -46,9 +49,9 @@ include '../conn.php';
                 ?>
             </select>
 
-            <button type="submit" class="btn btn-dark">Search</button>
+            <button type="submit" class="btn btn-outline-danger">Search</button>
             <a href="./faculty_detail.php">
-                <button type="button" class="btn btn-dark">Show all faculty</button>
+                <button type="button" class="btn btn-outline-danger">Show all faculty</button>
             </a>
         </form>
     </div>

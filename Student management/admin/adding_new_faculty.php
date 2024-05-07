@@ -57,6 +57,10 @@ if (!(isset($_SESSION['id']) && $_SESSION['user'] == 'admin')) {
                 <label for="DOB" class="form-label">DOB</label>
                 <input type="date" class="form-control" id="DOB" name="dob" required>
             </div>
+            <div class="col-12">
+                <label for="Address" class="form-label">Address</label>
+                <input type="text" class="form-control" id="Address" placeholder="Enter address" name="address" required>
+            </div>
             <div class="col-md-4">
                 <label for="Gender" class="form-label">Gender</label>
                 <select id="Gender" class="form-select" name="gender">
@@ -80,11 +84,7 @@ if (!(isset($_SESSION['id']) && $_SESSION['user'] == 'admin')) {
                     <option value="O-">O-</option>
                 </select>
             </div>
-            <div class="col-12">
-                <label for="Address" class="form-label">Address</label>
-                <input type="text" class="form-control" id="Address" placeholder="Enter address" name="address" required>
-            </div>
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <label for="Branch" class="form-label">Branch</label>
                 <select id="Branch" class="form-select" name="branch">
                     <option value='' selected>Branch..</option>

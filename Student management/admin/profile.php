@@ -126,9 +126,21 @@ if (!(isset($_SESSION['id']) && isset($_SESSION['user_id']) && $_SESSION['user']
             <label for="Password" class="form-label">Password</label>
             <div class="d-flex">
                 <input type="password" class="form-control" id="Password" name="password" value="<?php echo $row['password']; ?>" required>
-                <button type="button" class="btn btn-outline-info ms-2">🔏</button>
+                <button type="button" class="btn btn-outline-info ms-2" onclick="showpassword()">🔏</button>
             </div>
         </div>
+        <script>
+            function showpassword(){
+                x = document.getElementById("Password"); 
+                if(x.type=="password"){
+                    x.type="text";
+                }
+                else{
+                    x.type="password";
+                }
+            }
+        </script>
+        
         <div class="col-12">
             <button type="submit" class="btn btn-primary d-grid gap-2 col-6 mx-auto mb-3 mt-3" name="update" value="<?php echo $row['id']; ?>">Edit Details</button>
         </div>
