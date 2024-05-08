@@ -34,6 +34,9 @@
             <span class="visually-hidden">Next</span>
         </button>
     </div>
+    <?php
+        include '../footer.php';
+    ?>
 </body>
 
 </html>

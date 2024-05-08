@@ -147,6 +147,9 @@ include '../conn.php';
             </div>
         </form>
     </div>
+    <?php
+        include '../footer.php';
+    ?>
 </body>
 
 </html>

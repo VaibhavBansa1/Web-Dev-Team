@@ -168,6 +168,9 @@ if (isset($_GET['delete_success'])) {
             </div>
         </form>
     </div>
+    <?php
+        include '../footer.php';
+    ?>
 </body>
 
 </html>

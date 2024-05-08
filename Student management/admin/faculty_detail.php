@@ -161,6 +161,9 @@ include '../conn.php';
             </form>
         </tbody>
     </table>
+    <?php
+        include '../footer.php';
+    ?>
 </body>
 
 </html>

@@ -116,6 +116,9 @@ if (!(isset($_SESSION['id']) && $_SESSION['user'] == 'admin')) {
             </div>
         </form>
     </div>
+    <?php
+        include '../footer.php';
+    ?>
 </body>
 
 </html>

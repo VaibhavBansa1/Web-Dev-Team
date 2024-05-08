@@ -41,6 +41,9 @@ if (!(isset($_SESSION['id']) && isset($_SESSION['user_id']) && $_SESSION['user']
             <span class="visually-hidden">Next</span>
         </button>
     </div>
+    <?php
+        include '../footer.php';
+    ?>
 </body>
 
 </html>

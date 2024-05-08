@@ -141,6 +141,9 @@
                 <button type="submit" class="btn btn-primary d-grid gap-2 col-6 mx-auto mb-3 mt-3" name="update" value="<?php echo $row['id']; ?>">Edit Details</button>
             </div>
         </form>
+        <?php
+        include '../footer.php';
+        ?>
         <script>
             function showpassword(){
                 x = document.getElementById("Password"); 
