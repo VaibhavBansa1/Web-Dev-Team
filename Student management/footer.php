@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 </head>
 <body>
     
@@ -53,13 +54,13 @@
     
               <ul class="list-unstyled">
                 <li class="mb-2">
-                  <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Who we are</a>
+                  <a href="#!" class="text-white"><i class="fa-solid fa-circle pe-3"></i>Who we are</a>
                 </li>
                 <li class="mb-2">
-                  <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>What this site can do</a>
+                  <a href="#!" class="text-white"><i class="fa-solid fa-circle pe-3"></i>What this site can do</a>
                 </li>
                 <li class="mb-2">
-                  <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Features</a>
+                  <a href="#!" class="text-white"><i class="fa-solid fa-circle pe-3"></i>Features</a>
                 </li>
               </ul>
             </div>
@@ -71,13 +72,13 @@
     
               <ul class="list-unstyled">
                 <li class="mb-2">
-                  <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>College</a>
+                  <a href="#!" class="text-white"><i class="fa-solid fa-graduation-cap pe-3"></i>College</a>
                 </li>
                 <li class="mb-2">
-                  <a href="#!" class="text-white"><i class="fas fa-paw pe-3">Github</i></a>
+                  <a href="#!" class="text-white"><i class="fa-brands fa-github pe-3"></i>Github</a>
                 </li>
                 <li class="mb-2">
-                  <a href="#!" class="text-white"><i class="fas fa-paw pe-3"></i>Linkdin</a>
+                  <a href="#!" class="text-white"><i class="fa-brands fa-linkedin pe-3"></i>Linkdin</a>
                 </li>
               </ul>
             </div>
@@ -89,7 +90,7 @@
     
               <ul class="list-unstyled">
                 <li>
-                  <p><i class="fas fa-map-marker-alt pe-2"></i>Whatsapp</p>
+                  <p><i class="fa-brands fa-whatsapp pe-2"></i>Whatsapp</p>
                 </li>
                 <li>
                   <p><i class="fas fa-phone pe-2"></i>Mobile</p>

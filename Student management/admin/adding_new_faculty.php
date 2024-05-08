@@ -34,7 +34,7 @@ if (!(isset($_SESSION['id']) && $_SESSION['user'] == 'admin')) {
 
 <div>
     
-    <form class="row g-3 ms-5 me-5 mt-3 mb-5 border border-4 border-black fw-semibold bg-success-subtle" action="./add_this_faculty.php" method="post" style="border-radius:2rem;">
+    <form class="row g-3 ms-5 me-5 mt-3 mb-5 border border-4 border-black fw-semibold bg-danger-subtle" action="./add_this_faculty.php" method="post" style="border-radius:2rem;">
             <h1 class="text-center"><u>Add Faculty</u></h1><br>
             <hr>
             <div class="col-md-6">

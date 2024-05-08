@@ -42,11 +42,10 @@ if (!(isset($_SESSION['id']) && isset($_SESSION['user_id']) && $_SESSION['user']
         }
     }
     ?>
-    <h1>
-        Admin personal profile
-    </h1>
 
-    <form class="row g-3 ms-5 me-5 mt-3 mb-5 border border-4 border-black fw-semibold" action="edit_profile.php" method="post">
+    <form class="row g-3 ms-5 me-5 mt-3 mb-5 border border-4 border-black fw-semibold bg-danger-subtle" action="edit_profile.php" method="post" style="border-radius: 2rem;">
+        <h1 class="text-center"><u>Admin personal profile</u></h1>
+        <hr>
         <div class="col-md-6">
             <label for="S_Name" class="form-label">Student Name</label>
             <p class="form-control" id="S_Name" name="s_name"><?php echo $row['admin_name']; ?></p>

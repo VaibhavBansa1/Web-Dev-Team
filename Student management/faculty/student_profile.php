@@ -71,7 +71,7 @@ if (isset($_GET['delete_success'])) {
     ?>
 
     <div>
-        <form class="row g-3 ms-5 me-5 mt-3 mb-5 border border-4 border-black fw-semibold bg-success-subtle" action="edit_student.php" method="post" style="border-radius: 2rem;">
+        <form class="row g-3 ms-5 me-5 mt-3 mb-5 border border-4 border-black fw-semibold bg-danger-subtle" action="edit_student.php" method="post" style="border-radius: 2rem;">
             <h1 class="text-center"><u>Edit Student</u></h1><br>
             <div class="col-md-6">
                 <label for="S_Name" class="form-label">Student Name</label>
