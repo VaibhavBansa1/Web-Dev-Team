@@ -30,7 +30,7 @@ include '../conn.php';
                 <b>Search by:</b>
             </span>
 
-            <select name="branch_id" id="search-by-branch">
+            <select name="branch_id" id="search-by-branch" class="btn btn-outline-dark">
                 <option value='' selected>Branch..</option>
                 <?php
                 $sql_branch = "SELECT * FROM branches order by branch_name asc;";

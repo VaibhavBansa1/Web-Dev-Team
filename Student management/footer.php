@@ -62,6 +62,9 @@
                 <li class="mb-2">
                   <a href="#!" class="text-white"><i class="fa-solid fa-circle pe-3"></i>Features</a>
                 </li>
+                <li class="mb-2">
+                  <a href="#!" class="text-white"><i class="fa-solid fa-circle pe-3"></i>Feedback</a>
+                </li>
               </ul>
             </div>
             <!--Grid column-->

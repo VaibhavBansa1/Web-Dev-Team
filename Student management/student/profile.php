@@ -15,6 +15,7 @@
 <body>
     <?php
         include '../main_nav.php';
+		include 'student_navbar.php';
     ?>
 
     <?php 

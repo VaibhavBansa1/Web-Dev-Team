@@ -1,5 +1,10 @@
 <head>
     <style>
+        /* for changing the background color of navbar-item on hover */
+        .navbar-nav .nav-item:hover .nav-link {
+            background-color: #e04747;
+        } 
+
     </style>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
 </head>
@@ -13,6 +18,7 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="Faculty_home.php">Home</a>
                         </li>

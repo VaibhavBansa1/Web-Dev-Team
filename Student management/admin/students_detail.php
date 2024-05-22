@@ -26,9 +26,9 @@ include '../conn.php';
     </div>
     <div class=" text-end pt-2 pb-2">
         <form action="students_detail.php" method="get">
-            <span>
+            <span3>
                 <b>Search by:</b> 
-            </span>
+            </span3>
             <select name="session_id" id="search-by-session">
                 <option value='' selected>Session and Year..</option>
                 <?php
