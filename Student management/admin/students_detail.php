@@ -21,7 +21,7 @@ include '../conn.php';
     include '../main_nav.php';
     include './admin_navbar.php';
     ?>
-    <div class="text-center text-white pt-1 pb-1"  style="z-index:100;background-color: #e04747;">
+    <div class="text-center text-white pt-1 pb-1"  style="background-color: #e04747;">
         <h1>Student Details</h1>
     </div>
     <div class=" text-end pt-2 pb-2">
