@@ -72,6 +72,85 @@
                             <a class="nav-link" href="./preset.php">Presets</a>
                         </li> -->
                         <li class="nav-item">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Links
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <!-- Multi-column layout -->
+                                <div class="row">
+                                    <!-- First Column -->
+                                    <div class="col-md-7">
+                                        <ul class="list-unstyled">
+                                            <li class="dropdown-item"><b>Exam</b></li>
+                                            <hr>
+                                            <li><a class="dropdown-item" href="../student/exam_time_table.php">Exam Time Tables</a>
+                                            </li>
+                                            <li><a class="dropdown-item" href="../student/old_exam_papers.php">RGPV DIploma
+                                                    Papers</a></li>
+                                            <!-- More items -->
+                                        </ul>
+                                    </div>
+                                    <!-- Second Column -->
+                                    <div class="col-md-5">
+                                        <ul class="list-unstyled">
+                                            <li class="dropdown-item"><b>Extra</b></li>
+                                            <hr>
+                                            <li><a class="dropdown-item" href="../student/time_table.php">Time Table</a></li>
+                                            <!-- More items -->
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Resources
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <!-- Multi-column layout -->
+                                <div class="row">
+                                    <!-- First Column -->
+                                    <ul class="list-unstyled">
+                                        <li class="dropdown-item"><b>Forms</b></li>
+                                        <hr>
+                                        <li><a class="dropdown-item" href="../exam_form.pdf" target="_blank">Exam
+                                                Form</a></li>
+                                        <li><a class="dropdown-item"
+                                                href="https://www.polygwalior.ac.in/file/prov_addmision.pdf"
+                                                target="_blank">Provisional Admission Form</a></li>
+                                        <li><a class="dropdown-item"
+                                                href="https://www.polygwalior.ac.in/file/diploma_application.pdf"
+                                                target="_blank">Application to get Diploma</a></li>
+                                        <li><a class="dropdown-item"
+                                                href="https://www.polygwalior.ac.in/file/challan_college.pdf"
+                                                target="_blank">Challan for College Fees</a></li>
+                                        <li><a class="dropdown-item"
+                                                href="https://www.polygwalior.ac.in/file/TC_Form.pdf"
+                                                target="_blank">Application to get Transfer Certificate (T.C.)</a></li>
+                                        <!-- More items -->
+                                    </ul>
+                                    <!-- Second Column -->
+                                    <!-- <div class="col-md-6">
+                                        <ul class="list-unstyled">
+                                            <li class="dropdown-item"><b>Library</b></li>
+                                            <hr>
+                                            <li><a class="dropdown-item" href="#">Learning Material</a></li>
+                                            <li><a class="dropdown-item" href="#">Available Books</a></li>
+                                            More items
+                                        </ul>
+                                    </div> -->
+
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../file_upload/index.php">Upload PYQ</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="profile.php">Profile</a>
                         </li>
                     </ul>

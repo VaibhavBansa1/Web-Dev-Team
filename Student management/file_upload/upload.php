@@ -1,47 +1,65 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "your_database_name";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+session_start();
+if(!(isset($_SESSION['id']) && isset($_SESSION['user_id']) && in_array($_SESSION['user'],['admin','faculty']))){
+    header("location:../");
+    exit;
 }
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+include '../admin_conn.php';
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['subject']) &&
+isset($_POST['year']) && isset($_POST['sub_code']) && isset($_FILES['file'])) {
     $subject = $_POST['subject'];
     $year = $_POST['year'];
-    $session = $_POST['session'];
+    $sub_code = $_POST['sub_code'];
     $file = $_FILES['file'];
 
     // File upload path
-    $targetDir = "uploads/";
+    $targetDir = "../PYQ/";
     $fileName = basename($file["name"]);
     $targetFilePath = $targetDir . $fileName;
     $fileType = pathinfo($targetFilePath, PATHINFO_EXTENSION);
 
     // Allow certain file formats
-    $allowTypes = array('jpg', 'png', 'jpeg', 'gif', 'pdf', 'doc', 'docx');
+    $allowTypes = array('jpg', 'png', 'jpeg', 'pdf', 'doc', 'docx');
     if (in_array($fileType, $allowTypes)) {
         // Upload file to server
         if (move_uploaded_file($file["tmp_name"], $targetFilePath)) {
             // Insert file info into the database
-            $insert = $conn->query("INSERT INTO files (subject, year, session, file) VALUES ('$subject', '$year', '$session', '$fileName')");
+            $insert = $conn->query("INSERT INTO files (subject, year, sub_code, file) VALUES ('$subject', '$year', '$sub_code', '$fileName')");
             if ($insert) {
-                echo "The file " . $fileName . " has been uploaded successfully.";
+                echo "
+                <script>
+                    alert('The file " . $fileName . " has been uploaded successfully.');
+                    location.replace('./index.php');
+                </script>
+
+                ";
             } else {
-                echo "File upload failed, please try again.";
+                echo "
+                <script>
+                    alert('File upload failed, please try again.');
+                    location.replace('./index.php');
+                </script>
+                ";
             }
         } else {
-            echo "Sorry, there was an error uploading your file.";
+            echo "
+            <script>
+                alert('Sorry, there was an error uploading your file.')
+                location.replace('./index.php');
+            </script>
+            ";
         }
     } else {
-        echo "Sorry, only JPG, JPEG, PNG, GIF, PDF, DOC, & DOCX files are allowed to upload.";
+        echo "
+        <script>
+            alert('Sorry, only JPG, JPEG, PNG, PDF, DOC, & DOCX files are allowed to upload.')
+            location.replace('./index.php');
+        </script>
+        ";
     }
+} else {
+    header('location:./index.php');
+    exit;
 }
 
 $conn->close();

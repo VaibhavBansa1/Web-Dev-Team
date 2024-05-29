@@ -27,14 +27,14 @@ $sql = "
         ('admin3', 'Keshav', 'password', 'keshav3@gmail.com', '8109864578', '9109863155', 'Male', 'B-', 'soonsan gali paresan mahola vord no.422', '2001-05-12', 'sup_admin');
         Drop Database If Exists file_db;
         
-        CREATE TABLE files (
-            id INT(11) AUTO_INCREMENT PRIMARY KEY,
-            subject VARCHAR(255) NOT NULL,
-            year INT(11) NOT NULL,
-            session VARCHAR(255) NOT NULL,
-            file VARCHAR(255) NOT NULL,
-            uploaded_on TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-        );
+    CREATE TABLE files (
+        id INT(11) AUTO_INCREMENT PRIMARY KEY,
+        subject VARCHAR(255) NOT NULL,
+        year INT(11) NOT NULL,
+        sub_code VARCHAR(255) NOT NULL,
+        file VARCHAR(255) NOT NULL unique,
+        uploaded_on TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    );
 ";
 
 if ($conn->multi_query($sql)) {

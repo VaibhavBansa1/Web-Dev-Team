@@ -47,9 +47,9 @@
                                         <ul class="list-unstyled">
                                             <li class="dropdown-item"><b>Exam</b></li>
                                             <hr>
-                                            <li><a class="dropdown-item" href="exam_time_table.php">Exam Time Tables</a>
+                                            <li><a class="dropdown-item" href="../student/exam_time_table.php">Exam Time Tables</a>
                                             </li>
-                                            <li><a class="dropdown-item" href="old_exam_papers.php">RGPV DIploma
+                                            <li><a class="dropdown-item" href="../student/old_exam_papers.php">RGPV DIploma
                                                     Papers</a></li>
                                             <!-- More items -->
                                         </ul>
@@ -59,34 +59,13 @@
                                         <ul class="list-unstyled">
                                             <li class="dropdown-item"><b>Extra</b></li>
                                             <hr>
-                                            <li><a class="dropdown-item" href="./time_table.php">Time Table</a></li>
+                                            <li><a class="dropdown-item" href="../student/time_table.php">Time Table</a></li>
                                             <!-- More items -->
                                         </ul>
                                     </div>
 
                                 </div>
                             </div>
-
-                            <!-- <div class="row">
-
-                                <div>
-
-                                    <ul class="dropdown-menu">
-                                        <li class="dropdown-item"><b>Exam</b></li>
-                                        <hr>
-                                        <li><a class="dropdown-item" href="exam_time_table.php">Exam Time Tables</a></li>
-                                        <li><a class="dropdown-item" href="old_exam_papers.php">RGPV DIploma Papers</a></li>
-                                    </ul>
-                                </div>
-                                <div>
-                                    <ul class="dropdown-menu">
-                                        <li class="dropdown-item"><b>Exam</b></li>
-                                        <hr>
-                                        <li><a class="dropdown-item" href="exam_time_table.php">Exam Time Tables</a></li>
-                                        <li><a class="dropdown-item" href="old_exam_papers.php">RGPV DIploma Papers</a></li>
-                                    </ul>
-                                </div>
-                            </div> -->
 
                         </li>
                         <li class="nav-item">
