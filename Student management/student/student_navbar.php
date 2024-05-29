@@ -7,7 +7,7 @@
             background-color: #e04747;
             color:white;
         }
-        @media screen and (min-width: 1024px){
+        @media screen and (min-width: 768px){
             .navbar .nav-item:hover .dropdown-menu {
                     display: block;
                 }
@@ -52,7 +52,7 @@
                                         <li class="dropdown-item"><b>Forms</b></li><hr>
                                         <li><a class="dropdown-item" href="#">Admision Form</a></li>
                                         <li><a class="dropdown-item" href="#">Scolership Form</a></li>
-                                        <li><a class="dropdown-item" href="#">Exam Form</a></li>
+                                        <li><a class="dropdown-item" href="../exam_form.pdf">Exam Form</a></li>
                                         <!-- More items -->
                                     </ul>
                                     </div>
