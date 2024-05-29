@@ -88,13 +88,13 @@
     
               <ul class="list-unstyled">
                 <li class="mb-2">
-                  <a href="#!" class="text-white"><i class="fa-solid fa-graduation-cap pe-3"></i>College</a>
+                  <a href="https://www.polygwalior.ac.in" class="text-white"><i class="fa-solid fa-graduation-cap pe-3"></i>College</a>
                 </li>
                 <li class="mb-2">
-                  <a href="#!" class="text-white"><i class="fa-brands fa-github pe-3"></i>Github</a>
+                  <a href="https://github.com" class="text-white"><i class="fa-brands fa-github pe-3"></i>Github</a>
                 </li>
                 <li class="mb-2">
-                  <a href="#!" class="text-white"><i class="fa-brands fa-linkedin pe-3"></i>Linkdin</a>
+                  <a href="https://www.linkedin.com" class="text-white"><i class="fa-brands fa-linkedin pe-3"></i>Linkdin</a>
                 </li>
               </ul>
             </div>
@@ -105,14 +105,14 @@
               <h5 class="text-uppercase mb-4">Contact</h5>
     
               <ul class="list-unstyled">
-                <li>
-                  <p><i class="fa-brands fa-whatsapp pe-2"></i>Whatsapp</p>
+                <li class="mb-2">
+                  <a href="https://wa.me/9098603571" class="text-white"><i class="fa-brands fa-whatsapp pe-2"></i>Whatsapp</a>
                 </li>
-                <li>
-                  <p><i class="fas fa-phone pe-2"></i>Mobile</p>
+                <li class="mb-2">
+                  <a  href="tel:+919098603571" class="text-white"><i class="fas fa-phone pe-2"></i>Mobile</a>
                 </li>
-                <li>
-                  <p><i class="fas fa-envelope pe-2 mb-0"></i>Gmail</p>
+                <li class="mb-2">
+                 <a href="mailto:keshavrajpoot2007@gmail.com" class="text-white"><i class="fas fa-envelope pe-2 mb-0"></i>Gmail</a>
                 </li>
               </ul>
             </div>

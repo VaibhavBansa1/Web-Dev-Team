@@ -69,9 +69,6 @@
                                 </div>
                             </div>
                                     </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="profile.php">Other Activities</a>
-                                    </li>
                                     <!-- <li class="nav-item">
                                         <a class="nav-link" href="#">Edit Student Data</a>
                                     </li> -->

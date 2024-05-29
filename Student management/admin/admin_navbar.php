@@ -44,8 +44,6 @@
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="students_detail.php">Students Data</a></li>
                             <li><a class="dropdown-item" href="adding_new_student.php">Add Student</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
                         </ul>
                         </li>
                         </li>
@@ -56,8 +54,6 @@
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="faculty_detail.php">Faculty Data</a></li>
                             <li><a class="dropdown-item" href="adding_new_faculty.php">Add Faculty</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
                         </ul>
                         </li>
                         <!-- <li class="nav-item">
