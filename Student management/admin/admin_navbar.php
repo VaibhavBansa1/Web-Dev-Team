@@ -6,7 +6,11 @@
         .navbar-nav .nav-item:hover .nav-link {
             background-color: #e04747;
         } 
-        @media screen and (min-width: 1024px){
+        .navbar .nav-item .dropdown-menu .dropdown-item:hover{
+            background-color: #e04747;
+            color:white;
+        }
+        @media screen and (min-width: 768px){
 
             .navbar .dropdown:hover .dropdown-menu {
                 display: block;
