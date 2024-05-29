@@ -2,7 +2,7 @@
 
 $servername = "localhost";
 $username = "root";  // Change to your database username
-$password = "mysql";  // Change to your database password
+$password = "";  // Change to your database password
 $dbname = "file_db";
 
 // Create connection

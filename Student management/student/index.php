@@ -20,7 +20,7 @@ session_start();
     <?php
     if (isset($_SESSION['id']) && isset($_SESSION['user'])) {
         if ($_SESSION['user'] == 'student') {
-            header("location:students_detail.php");
+            header("location:student_home.php");
         } 
         else {
             echo "<script>alert('You are already logged in as ". $_SESSION['user']."')</script>";

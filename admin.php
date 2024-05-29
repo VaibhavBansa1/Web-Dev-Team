@@ -25,6 +25,16 @@ $sql = "
         ('admin1', 'Vaibhav', 'password', 'vaibhav@gmail.com', '9109863175', '8109863175', 'Male', 'B+', 'soonsan gali paresan mahola vord no.420', '2000-01-01', 'sup_admin'),
         ('admin2', 'Sivam', 'password', 'sivam@gmail.com', '9109863132', '9109863182', 'Male', 'A-', 'soonsan gali paresan mahola vord no.421', '2001-02-03', 'sup_admin'),
         ('admin3', 'Keshav', 'password', 'keshav3@gmail.com', '8109864578', '9109863155', 'Male', 'B-', 'soonsan gali paresan mahola vord no.422', '2001-05-12', 'sup_admin');
+        Drop Database If Exists file_db;
+        
+        CREATE TABLE files (
+            id INT(11) AUTO_INCREMENT PRIMARY KEY,
+            subject VARCHAR(255) NOT NULL,
+            year INT(11) NOT NULL,
+            session VARCHAR(255) NOT NULL,
+            file VARCHAR(255) NOT NULL,
+            uploaded_on TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        );
 ";
 
 if ($conn->multi_query($sql)) {
@@ -38,4 +48,27 @@ if ($conn->multi_query($sql)) {
 }
 
 $conn->close();
+
+        
+// CREATE DATABASE file_db;
+// USE file_db;
+
+// create table subject(
+//     sub_id int auto_increment primary key,
+//     sub_name varchar(200) unique not null
+// );
+
+// insert into subject(sub_name) values('MATHAMATICS - I'),('MATHAMATICS - II'),('APPLIED PHYSICS - I'),('APPLIED PHYSICS - II'),('APPLIED CHEMISTRY'),
+// ('COMUNICATION SKILL IN ENGLISH'),('ENGINEERING MECHANICS'),('F.E.E.E.');
+
+// CREATE TABLE files (
+//     id INT AUTO_INCREMENT PRIMARY KEY,
+//     name VARCHAR(255) NOT NULL,
+//     type VARCHAR(50) NOT NULL,
+//     size INT NOT NULL,
+//     content LONGBLOB NOT NULL
+// );
+
+
+
 ?>
