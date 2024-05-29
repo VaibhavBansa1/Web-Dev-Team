@@ -12,22 +12,23 @@ include '../admin_conn.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Old Exam Papers</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.css" />
     <script src="https://cdn.datatables.net/2.0.8/js/dataTables.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="//cdn.datatables.net/2.0.5/js/dataTables.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
 
 </head>
 
 <body>
     <?php
     include '../main_nav.php';
-    include 'student_navbar.php';
+    if($_SESSION['user'] == "admin") {
+        include "../admin/admin_navbar.php";
+    } else if ($_SESSION['user'] == "faculty") {
+        include "../faculty/faculty_navbar.php";
+    } else {
+        include '../student/student_navbar.php';
+    }
     ?>
 
     <div class="text-center text-white pt-1 pb-1" style="background-color: #e04747;">

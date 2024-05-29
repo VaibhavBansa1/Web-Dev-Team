@@ -22,9 +22,9 @@ $sql = "
 
     INSERT INTO admin
     VALUES
-        ('admin1', 'Vaibhav', 'password', 'vaibhav@gmail.com', '9109863175', '8109863175', 'Male', 'B+', 'soonsan gali paresan mahola vord no.420', '2000-01-01', 'sup_admin'),
-        ('admin2', 'Sivam', 'password', 'sivam@gmail.com', '9109863132', '9109863182', 'Male', 'A-', 'soonsan gali paresan mahola vord no.421', '2001-02-03', 'sup_admin'),
-        ('admin3', 'Keshav', 'password', 'keshav3@gmail.com', '8109864578', '9109863155', 'Male', 'B-', 'soonsan gali paresan mahola vord no.422', '2001-05-12', 'sup_admin');
+        ('admin1', 'Vaibhav', 'password', 'vaibhav@gmail.com', '9109863175', '8109863175', 'Male', 'B+', 'Mall road, Opposite Police Station, Morar, Gwalior', '2000-01-01', 'sup_admin'),
+        ('admin2', 'Sivam', 'password', 'sivam@gmail.com', '9109863132', '9109863182', 'Male', 'A-', 'Mall road, Opposite Police Station, Morar, Gwalior', '2001-02-03', 'sup_admin'),
+        ('admin3', 'Keshav', 'password', 'keshav3@gmail.com', '8109864578', '9109863155', 'Male', 'B-', 'Mall road, Opposite Police Station, Morar, Gwalior', '2001-05-12', 'sup_admin');
         Drop Database If Exists file_db;
         
     CREATE TABLE files (

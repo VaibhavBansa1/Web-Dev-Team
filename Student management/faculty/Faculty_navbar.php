@@ -20,13 +20,13 @@
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="Faculty_home.php">Home</a>
+                            <a class="nav-link active" aria-current="page" href="../faculty/Faculty_home.php">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="students_detail.php">Students Data</a>
+                            <a class="nav-link" href="../faculty/students_detail.php">Students Data</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="adding_new_student.php">Add Student</a>
+                            <a class="nav-link" href="../faculty/adding_new_student.php">Add Student</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -108,7 +108,7 @@
                             <a class="nav-link" href="../file_upload/index.php">Upload PYQ</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="profile.php">Profile</a>
+                            <a class="nav-link" href="../faculty/profile.php">Profile</a>
                         </li>
                     </ul>
                 </div>

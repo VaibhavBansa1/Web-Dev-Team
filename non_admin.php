@@ -70,10 +70,10 @@ create table student (
 
 insert into student 
 values
-('22BRACS01','student1','guardian1','student1@gmail.com','7894561231','7894561241','2006-01-03','M','password','B+','address blabla bla bla',1,2,'S'),
-('22BRACS02','student2','guardian2','student2@gmail.com','7894561232','7894561242','2006-01-03','M','password','B+','address blabla bla bla',1,2,'S'),
-('22BRACS03','student3','guardian3','student3@gmail.com','7894561233','7894561243','2006-01-03','M','password','B+','address blabla bla bla',1,1,'S'),
-('22BRACS04','student4','guardian4','student4@gmail.com','7894561234','7894561244','2006-01-03','M','password','B+','address blabla bla bla',1,1,'S');
+('22017C04001','Raj Shivhare','guardian1','student1@gmail.com','7894561231','7894561241','2006-01-03','M','password','B+','Mall road, Opposite Police Station, Morar, Gwalior',1,2,'S'),
+('22017C04002','Sivam','guardian2','student2@gmail.com','7894561232','7894561242','2006-01-03','M','password','B+','Mall road, Opposite Police Station, Morar, Gwalior',1,2,'S'),
+('22017C04003','Keshav Rajpoot','guardian3','student3@gmail.com','7894561233','7894561243','2006-01-03','M','password','B+','Mall road, Opposite Police Station, Morar, Gwalior',1,1,'S'),
+('22017C04004','Aman','guardian4','student4@gmail.com','7894561234','7894561244','2006-01-03','M','password','B+','Mall road, Opposite Police Station, Morar, Gwalior',1,1,'S');
 
 SELECT * FROM  student;
 
@@ -98,13 +98,9 @@ create table faculty(
 
 insert into faculty
 values
-('faculty1','name1','password','faculty1@gmail.com','9109863175','8109863175','M','B+','soonsan gali paresan mahola vord no.420','2000-01-01',1,'F'),
-('faculty2','name2','password','faculty2@gmail.com','9109863132','9109863182','M','A-','soonsan gali paresan mahola vord no.421','2001-02-03',1,'F'),
-('faculty3','name3','password','faculty3@gmail.com','8109864578','9109863155','F','B-','soonsan gali paresan mahola vord no.422','2001-05-12',1,'F'),
-('faculty4','name4','password','faculty4@gmail.com','7380986311','6109863171','M','AB+','soonsan gali paresan mahola vord no.423','2000-03-22',1,'F'),
-('faculty5','name5','password','faculty5@gmail.com','8099863179','8099863135','F','O+','soonsan gali paresan mahola vord no.424','2002-09-09',2,'F'),
-('faculty6','name6','password','faculty6@gmail.com','8109863179','8109863135','F','O+','soonsan gali paresan mahola vord no.424','2002-09-09',2,'F'),
-('faculty7','name7','password','faculty7@gmail.com','9009863145','8109863177','M','A+','soonsan gali paresan mahola vord no.426','2001-10-11',2,'F');
+('faculty1','name1','password','faculty1@gmail.com','9109863175','8109863175','M','B+','Mall road, Opposite Police Station, Morar, Gwalior','2000-01-01',1,'F'),
+('faculty2','name2','password','faculty2@gmail.com','9109863132','9109863182','M','A-','Mall road, Opposite Police Station, Morar, Gwalior','2001-02-03',1,'F'),
+('faculty3','name3','password','faculty3@gmail.com','8109864578','9109863155','F','B-','Mall road, Opposite Police Station, Morar, Gwalior','2001-05-12',1,'F');
 
 ";
 

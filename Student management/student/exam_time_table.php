@@ -16,7 +16,13 @@ if (!(isset($_SESSION['id']) && isset($_SESSION['user_id']))) {
 <body>
     <?php
     include '../main_nav.php';
-    include 'student_navbar.php';
+    if($_SESSION['user'] == "admin") {
+        include "../admin/admin_navbar.php";
+    } else if ($_SESSION['user'] == "faculty") {
+        include "../faculty/faculty_navbar.php";
+    } else {
+        include '../student/student_navbar.php';
+    }
     ?>
     <div class="text-center text-white pt-1 pb-1" style="background-color: #e04747;">
         <h1>Exam Time Table</h1>
