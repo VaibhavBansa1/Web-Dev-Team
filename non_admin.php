@@ -2,7 +2,7 @@
 include "./_conn.php";
 
 $sql = "
-drop database college;
+DROP DATABASE IF EXISTS college;
 create database college;
 use college;
 create table branches(
