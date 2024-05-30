@@ -6,11 +6,6 @@ if (isset($_GET['fail']) && $_GET['fail'] == 1) {
     echo "<script>alert('Wrong password or wrong id')</script>";
 }
 session_start();
-if (isset($_SESSION['id']) && isset($_SESSION['user'])) {
-    if ($_SESSION['user'] == 'student') {
-        header("location:profile.php");
-    }
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,6 +17,16 @@ if (isset($_SESSION['id']) && isset($_SESSION['user'])) {
     <title>Student Login</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
     <link rel="stylesheet" href="style.css">
+    <?php
+    if (isset($_SESSION['id']) && isset($_SESSION['user'])) {
+        if ($_SESSION['user'] == 'student') {
+            header("location:student_home.php");
+        } 
+        else {
+            echo "<script>alert('You are already logged in as ". $_SESSION['user']."')</script>";
+        }
+    }
+    ?>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script> -->
 </head>
 

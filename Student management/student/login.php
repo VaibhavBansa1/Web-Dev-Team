@@ -17,7 +17,7 @@ if (isset($_POST['id']) && isset($_POST['password']) && isset($_POST['submit']))
         $_SESSION['id'] = $session_id;
         $_SESSION['user'] = 'student';
         $_SESSION['user_id'] = $result['id'];
-        header("location:profile.php");
+        header("location:student_home.php");
     } else {
         header("location:index.php?fail=" . true);
     }

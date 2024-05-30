@@ -13,7 +13,7 @@ include '../conn.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../Logo.png" type="image/x-icon">
     <title>Faculty Details</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
 </head>
 
 <body>
@@ -30,7 +30,7 @@ include '../conn.php';
                 <b>Search by:</b>
             </span>
 
-            <select name="branch_id" id="search-by-branch">
+            <select name="branch_id" id="search-by-branch" class="btn btn-outline-dark">
                 <option value='' selected>Branch..</option>
                 <?php
                 $sql_branch = "SELECT * FROM branches order by branch_name asc;";
