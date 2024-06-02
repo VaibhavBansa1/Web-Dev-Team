@@ -14,6 +14,22 @@ include '../conn.php';
     <link rel="shortcut icon" href="../Logo.png" type="image/x-icon">
     <title>Student Details</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        .search_box{
+            border-style: solid;
+            border-radius: 0.5vw;
+            height: 2.5vw;
+        }
+        @media screen and (max-width: 600px) {
+            .search_box{
+                margin-bottom: 2vw;
+                height: auto;
+            }
+            .short{
+                margin-bottom: 2vw;
+            }
+        } 
+    </style>
 </head>
 
 <body>
@@ -24,58 +40,68 @@ include '../conn.php';
     <div class="text-center text-white pt-1 pb-1"  style="background-color: #e04747;">
         <h1>Student Details</h1>
     </div>
-    <div class=" text-end pt-2 pb-2">
-        <form action="students_detail.php" method="get">
-            <span3>
-                <b>Search by:</b> 
-            </span3>
-            <select name="session_id" id="search-by-session">
-                <option value='' selected>Session and Year..</option>
-                <?php
-                $sql_session = "SELECT * FROM clg_session order by session_name desc;";
-                $result = $conn->query($sql_session);
-                if (!$result) {
-                    die("Invalid query: " . $conn->error);
-                }
-                $years = ['(1st Year)', '(2nd Year)', '(3rd Year)'];
-                $year = 0;
-                $selected = '';
-                while ($row_session = $result->fetch_assoc()) {
-                    if (isset($_GET['session_id'])) {
-                        $selected = ($row_session['id'] === $_GET['session_id']) ? 'selected' : '';
-                    }
-                    $show_year = ($year < 3 ? $years[$year++] : '');
-                    echo " <option value='" . $row_session['id'] . "' " . $selected . ">" . $row_session['session_name'] . " $show_year</option>";
-                }
-                ?>
-            </select>
+    <div class=" pt-2 pb-2">
+        <form action="students_detail.php" method="get" class="row">
+            <div class="col-md-4 text-center">
+                <b>Search by:</b>
+                <input type="text" id="myInput" onkeyup="filterTable()" placeholder="Roll no." class="search_box border border-dark">
+            </div>
+            <div class="col-md-5 short">
 
-            <select name="branch_id" id="search-by-branch">
-                <option value='' selected>Branch..</option>
-                <?php
-                $sql_branch = "SELECT * FROM branches order by branch_name asc;";
-                $result = $conn->query($sql_branch);
-                if (!$result) {
-                    die("Invalid query: " . $conn->error);
-                }
-                while ($row_branch = $result->fetch_assoc()) {
-                    if (isset($_GET['branch_id'])) {
-                        $selected = ($row_branch['id'] === $_GET['branch_id']) ? 'selected' : '';
+                <span3>
+                    <b>Short by:</b> 
+                </span3>
+                <select name="session_id" id="search-by-session" class="btn btn-outline-dark">
+                    <option value='' selected>Session and Year..</option>
+                    <?php
+                    $sql_session = "SELECT * FROM clg_session order by session_name desc;";
+                    $result = $conn->query($sql_session);
+                    if (!$result) {
+                        die("Invalid query: " . $conn->error);
                     }
-                    echo "<option value='" . $row_branch['id'] . "' " . $selected . ">" . $row_branch['branch_name'] . "</option> ";
-                }
-                $conn->close();
-                ?>
-            </select>
+                    $years = ['(1st Year)', '(2nd Year)', '(3rd Year)'];
+                    $year = 0;
+                    $selected = '';
+                    while ($row_session = $result->fetch_assoc()) {
+                        if (isset($_GET['session_id'])) {
+                            $selected = ($row_session['id'] === $_GET['session_id']) ? 'selected' : '';
+                        }
+                        $show_year = ($year < 3 ? $years[$year++] : '');
+                        echo " <option value='" . $row_session['id'] . "' " . $selected . ">" . $row_session['session_name'] . " $show_year</option>";
+                    }
+                    ?>
+                </select>
+    
+                <select name="branch_id" id="search-by-branch" class="btn btn-outline-dark">
+                    <option value='' selected>Branch..</option>
+                    <?php
+                    $sql_branch = "SELECT * FROM branches order by branch_name asc;";
+                    $result = $conn->query($sql_branch);
+                    if (!$result) {
+                        die("Invalid query: " . $conn->error);
+                    }
+                    while ($row_branch = $result->fetch_assoc()) {
+                        if (isset($_GET['branch_id'])) {
+                            $selected = ($row_branch['id'] === $_GET['branch_id']) ? 'selected' : '';
+                        }
+                        echo "<option value='" . $row_branch['id'] . "' " . $selected . ">" . $row_branch['branch_name'] . "</option> ";
+                    }
+                    $conn->close();
+                    ?>
+                </select>
+            </div>
+            <div class="col-md-3 text-center">
 
-            <button type="submit" class="btn btn-outline-danger">Search</button>
-            <a href="./students_detail.php">
-                <button type="button" class="btn btn-outline-danger">Show all student</button>
-            </a>
+                <button type="submit" class="btn btn-outline-danger">Short</button>
+                <a href="./students_detail.php">
+                   <button type="button" class="btn btn-outline-danger">Show all student</button>
+               </a>
+            </div>
+
         </form>
     </div>
-
-    <table class="table table-light table-striped-columns table table-hover">
+    <!-- <input type="text" id="myInput" onkeyup="filterTable()" placeholder="Search By Roll no." class="search_box "> -->
+    <table class="table table-light table-striped-columns table table-hover" id="myTable">
         <thead class="table-success">
             <tr>
                 <th>
@@ -206,6 +232,29 @@ include '../conn.php';
     <?php
         include '../footer.php';
     ?>
+    <script>
+        function filterTable() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+
+            // Loop through all table rows, and hide those who don't match the search query
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+        } 
+  }
+}
+
+    </script>
 </body>
 
 </html>

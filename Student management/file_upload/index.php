@@ -24,12 +24,14 @@
         include "../faculty/faculty_navbar.php";
     }
     ?>
+    <div class="text-center text-white pt-1 pb-1"  style="background-color: #e04747;">
+        <h1>Upload PVQ</h1>
+    </div>
     <br><br>
     <div class="container p-6">
-        <h2>Upload PYQ</h2>
         <form action="upload.php" method="post" enctype="multipart/form-data">
             <div class="form-group">
-                <label for="subject" class="form-label">Subject:</label>
+                <label for="subject" class="form-label">SubjSct:</label>
                 <input type="text" class="form-control" id="subject" name="subject" required>
             </div>
             <div class="form-group">
@@ -45,7 +47,7 @@
                 <input type="file" class="form-control" id="file" name="file" required>
             </div>
             <div class="form-group">
-                <input type="submit" class="btn btn-primary d-grid gap-2 col-6 mx-auto mb-3 mt-3" value="Upload">
+                <input type="submit" class="btn btn-outline-danger d-grid gap-2 col-6 mx-auto mb-3 mt-3" value="Upload">
             </div>
         </form>
     </div>
