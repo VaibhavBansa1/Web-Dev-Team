@@ -13,22 +13,25 @@ include '../conn.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../Logo.png" type="image/x-icon">
     <title>Student Details</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <style>
-        .search_box{
+        .search_box {
             border-style: solid;
             border-radius: 0.5vw;
             height: 2.5vw;
         }
+
         @media screen and (max-width: 600px) {
-            .search_box{
+            .search_box {
                 margin-bottom: 2vw;
                 height: auto;
             }
-            .short{
+
+            .short {
                 margin-bottom: 2vw;
             }
-        } 
+        }
     </style>
 </head>
 
@@ -37,19 +40,20 @@ include '../conn.php';
     include '../main_nav.php';
     include './admin_navbar.php';
     ?>
-    <div class="text-center text-white pt-1 pb-1"  style="background-color: #e04747;">
+    <div class="text-center text-white pt-1 pb-1" style="background-color: #e04747;">
         <h1>Student Details</h1>
     </div>
     <div class=" pt-2 pb-2">
         <form action="students_detail.php" method="get" class="row">
             <div class="col-md-4 text-center">
                 <b>Search by:</b>
-                <input type="text" id="myInput" onkeyup="filterTable()" placeholder="Roll no." class="search_box border border-dark">
+                <input type="text" id="myInput" onkeyup="filterTable()" placeholder="Roll no."
+                    class="search_box border border-dark">
             </div>
             <div class="col-md-5 short">
 
                 <span3>
-                    <b>Short by:</b> 
+                    <b>Short by:</b>
                 </span3>
                 <select name="session_id" id="search-by-session" class="btn btn-outline-dark">
                     <option value='' selected>Session and Year..</option>
@@ -71,7 +75,7 @@ include '../conn.php';
                     }
                     ?>
                 </select>
-    
+
                 <select name="branch_id" id="search-by-branch" class="btn btn-outline-dark">
                     <option value='' selected>Branch..</option>
                     <?php
@@ -94,8 +98,8 @@ include '../conn.php';
 
                 <button type="submit" class="btn btn-outline-danger">Short</button>
                 <a href="./students_detail.php">
-                   <button type="button" class="btn btn-outline-danger">Show all student</button>
-               </a>
+                    <button type="button" class="btn btn-outline-danger">Show all student</button>
+                </a>
             </div>
 
         </form>
@@ -230,19 +234,20 @@ include '../conn.php';
         </tbody>
     </table>
     <?php
-        include '../footer.php';
+    include '../footer.php';
     ?>
     <script>
-        function filterTable(){
-            var input, filter, table, tr, td, i, j, txtValue;
+        function filterTable() {
+            let input, filter, table, tr, td, i, j, txtValue, howManyColumn;
             input = document.getElementById("myInput");
             filter = input.value.toUpperCase();
             table = document.getElementById("myTable");
             tr = table.getElementsByTagName("tr");
+            howManyColumn = document.querySelectorAll('tr')[1].querySelectorAll('td').length;
 
             // Loop through all table rows, and hide those who don't match the search query
-            for (i = 0; i < tr.length; i++) {
-                for(j=0;j<8;j++){
+            for (i = 1; i < tr.length; i++) {
+                for (j = 0; j < howManyColumn ; j++) {
                     td = tr[i].getElementsByTagName("td")[j];
                     if (td) {
                         txtValue = td.textContent || td.innerText;
@@ -253,8 +258,8 @@ include '../conn.php';
                             tr[i].style.display = "none";
                         }
                     }
-                } 
-            }    
+                }
+            }
         }
     </script>
 </body>
