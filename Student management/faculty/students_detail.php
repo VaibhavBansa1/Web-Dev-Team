@@ -50,7 +50,7 @@ include '../conn.php';
 
             <div class="col-md-5 text-center filter">
                 <span>
-                    <b>Search by:</b>
+                    <b>Filter by:</b>
                 </span>
                 <select name="session_id" id="search-by-session" class="btn btn-outline-dark">
                     <option value='' selected>Session and Year..</option>
@@ -93,7 +93,7 @@ include '../conn.php';
             </div>
             
             <div class="col-md-3 text-center">
-                <button type="submit" class="btn btn-outline-danger">Search</button>
+                <button type="submit" class="btn btn-outline-danger">Filter</button>
                 <a href="./students_detail.php">
                     <button type="button" class="btn btn-outline-danger">Show all student</button>
                 </a>

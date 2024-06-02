@@ -85,7 +85,7 @@ include '../conn.php';
         <thead class="table-success">
             <tr>
                 <th>
-                    Faculty ID.
+                    Faculty ID
                 </th>
                 <th>
                     Name

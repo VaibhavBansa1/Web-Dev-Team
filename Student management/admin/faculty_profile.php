@@ -139,7 +139,7 @@ if (isset($_GET['delete_success'])) {
                 </select>
             </div>
             <div class="col-md-6">
-                <label for="Rollno" class="form-label">Roll number</label>
+                <label for="Rollno" class="form-label">Faculty ID</label>
                 <h2 class="form-control" id="Rollno">
                     <?php echo $row['id']; ?>
                 </h2>
