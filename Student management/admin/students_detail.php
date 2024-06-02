@@ -28,7 +28,7 @@ include '../conn.php';
                 height: auto;
             }
 
-            .short {
+            .filter {
                 margin-bottom: 2vw;
             }
         }
@@ -50,10 +50,10 @@ include '../conn.php';
                 <input type="text" id="myInput" onkeyup="filterTable()" placeholder="Roll no."
                     class="search_box border border-dark">
             </div>
-            <div class="col-md-5 short">
+            <div class="col-md-5 filter">
 
                 <span3>
-                    <b>Short by:</b>
+                    <b>Filter by:</b>
                 </span3>
                 <select name="session_id" id="search-by-session" class="btn btn-outline-dark">
                     <option value='' selected>Session and Year..</option>
@@ -96,7 +96,7 @@ include '../conn.php';
             </div>
             <div class="col-md-3 text-center">
 
-                <button type="submit" class="btn btn-outline-danger">Short</button>
+                <button type="submit" class="btn btn-outline-danger">Filter</button>
                 <a href="./students_detail.php">
                     <button type="button" class="btn btn-outline-danger">Show all student</button>
                 </a>

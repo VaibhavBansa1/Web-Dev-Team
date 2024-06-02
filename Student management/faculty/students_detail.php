@@ -26,7 +26,7 @@ include '../conn.php';
                 margin-bottom: 2vw;
                 height: auto;
             }
-            .short{
+            .filter{
                 margin-bottom: 2vw;
             }
         } 
@@ -48,7 +48,7 @@ include '../conn.php';
                 <input type="text" id="myInput" onkeyup="filterTable()" placeholder="Roll no." class="search_box border border-dark">
             </div>
 
-            <div class="col-md-5 text-center short">
+            <div class="col-md-5 text-center filter">
                 <span>
                     <b>Search by:</b>
                 </span>

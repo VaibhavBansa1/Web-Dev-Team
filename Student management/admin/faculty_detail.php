@@ -26,7 +26,7 @@ include '../conn.php';
                 margin-bottom: 2vw;
                 height: auto;
             }
-            .short{
+            .filter{
                 margin-bottom: 2vw;
             }
         } 
@@ -52,7 +52,7 @@ include '../conn.php';
             <div class="col-md-8 text-end">
 
                 <span>
-                    <b>Short by:</b>
+                    <b>Filter by:</b>
                 </span>
                 <select name="branch_id" id="search-by-branch" class="btn btn-outline-dark">
                     <option value='' selected>Branch..</option>
