@@ -5,6 +5,18 @@
             background-color: #e04747;
         }
 
+        .navbar .nav-item .dropdown-menu .dropdown-item:hover {
+            background-color: #e04747;
+            color: white;
+        }
+
+        @media screen and (min-width: 768px) {
+
+            .navbar .nav-item:hover .dropdown-menu {
+                display: block;
+            }
+        }
+
     </style>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
 </head>

@@ -12,7 +12,7 @@
 
         @media screen and (min-width: 768px) {
 
-            .navbar .dropdown:hover .dropdown-menu {
+            .navbar .nav-item:hover .dropdown-menu {
                 display: block;
             }
         }
@@ -39,7 +39,7 @@
                         <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="../admin/admin_home.php">Home</a>
                         </li>
-                        <li class="nav-item dropdown">
+                        <li class="nav-item">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
                                 Student
@@ -50,7 +50,7 @@
                             </ul>
                         </li>
                         </li>
-                        <li class="nav-item dropdown">
+                        <li class="nav-item">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
                                 Faculty
