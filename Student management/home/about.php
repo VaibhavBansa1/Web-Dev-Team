@@ -107,10 +107,20 @@
                 <h2><u>Team Contributions</u></h2>
                 <div class="row pt-3">
                     <div class="col-md-6">
-                        <h3>Aman - Frontend Designing</h3>
+                        <h3>Aman - Frontend Designing<br></h3>
+                        <ul class="fs-5">
+                            <li>Designed the user interface for Admin, Faculty, and Student panels.</li>
+                            <li>Ensured the application is responsive and user-friendly.</li>
+                            <li>Applied UI/UX principles to improve user interaction and experience.</li>
+                        </ul>
                     </div>
                     <div class="col-md-6">
                         <h3>Sivam - Backend Development and Planning</h3>
+                        <ul class="fs-5">
+                            <li>Developed core backend functionalities using PHP.</li>
+                            <li>Planned the overall structure and workflow of the application.</li>
+                            <li>Integrated backend services to support CRUD operations and file management.</li>
+                        </ul>
                     </div>
                 </div>
                 <div class="row pt-3">
