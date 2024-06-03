@@ -36,7 +36,7 @@ include '../conn.php';
 <body>
     <?php
     include '../main_nav.php';
-    include './Faculty_navbar.php';
+    include './faculty_navbar.php';
     ?>
     <div class="text-center text-white pt-1 pb-1"  style="z-index:100;background-color: #e04747;">
         <h1>Student Details</h1>

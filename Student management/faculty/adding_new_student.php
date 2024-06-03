@@ -28,7 +28,7 @@ include '../conn.php';
 <body>
     <?php
     include '../main_nav.php';
-    include './Faculty_navbar.php';
+    include './faculty_navbar.php';
     ?>
 
     <div>

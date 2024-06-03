@@ -17,7 +17,7 @@ if (!(isset($_SESSION['id']) && $_SESSION['user'] == 'faculty')) {
 <body>
   <?php
   include '../main_nav.php';
-  include './Faculty_navbar.php';
+  include './faculty_navbar.php';
   ?>
   <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
     <div class="carousel-inner">
