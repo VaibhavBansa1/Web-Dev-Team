@@ -15,7 +15,7 @@
 <body>
     <?php
         include '../main_nav.php';
-        include 'Faculty_navbar.php';
+        include 'faculty_navbar.php';
     ?>
 
     <?php 
@@ -125,8 +125,8 @@
                 </h2>
             </div> -->
             <div class="col-md-6">
-                <label for="Rollno" class="form-label">Roll number</label>
-                <h2 class="form-control" id="Rollno" >
+                <label for="faculty-id" class="form-label">Faculty Username</label>
+                <h2 class="form-control" id="faculty-id" >
                     <?php echo $row['id']; ?>
                 </h2>
             </div>

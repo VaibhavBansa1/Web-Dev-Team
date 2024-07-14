@@ -47,7 +47,7 @@ if (!(isset($_SESSION['id']) && isset($_SESSION['user_id']) && $_SESSION['user']
         <h1 class="text-center"><u>Admin personal profile</u></h1>
         <hr>
         <div class="col-md-6">
-            <label for="S_Name" class="form-label">Student Name</label>
+            <label for="S_Name" class="form-label">Admin Name</label>
             <p class="form-control" id="S_Name" name="s_name"><?php echo $row['admin_name']; ?></p>
         </div>
         <!-- <div class="col-md-6">
@@ -116,7 +116,7 @@ if (!(isset($_SESSION['id']) && isset($_SESSION['user_id']) && $_SESSION['user']
                 </h2>
             </div> -->
         <div class="col-md-6">
-            <label for="Rollno" class="form-label">Roll number</label>
+            <label for="Rollno" class="form-label">Admin Username</label>
             <h2 class="form-control" id="Rollno">
                 <?php echo $row['id']; ?>
             </h2>

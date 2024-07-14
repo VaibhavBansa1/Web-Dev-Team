@@ -26,7 +26,7 @@ include '../conn.php';
                 margin-bottom: 2vw;
                 height: auto;
             }
-            .short{
+            .filter{
                 margin-bottom: 2vw;
             }
         } 
@@ -85,7 +85,7 @@ include '../conn.php';
         <thead class="table-success">
             <tr>
                 <th>
-                    Faculty ID.
+                    Faculty ID
                 </th>
                 <th>
                     Name
@@ -190,16 +190,17 @@ include '../conn.php';
     include '../footer.php';
     ?>
     <script>
-        function filterTable(){
-            var input, filter, table, tr, td, i, j, txtValue;
+        function filterTable() {
+            let input, filter, table, tr, td, i, j, txtValue, howManyColumn;
             input = document.getElementById("myInput");
             filter = input.value.toUpperCase();
             table = document.getElementById("myTable");
             tr = table.getElementsByTagName("tr");
+            howManyColumn = document.querySelectorAll('tr')[1].querySelectorAll('td').length;
 
             // Loop through all table rows, and hide those who don't match the search query
-            for (i = 0; i < tr.length; i++) {
-                for(j=0;j<8;j++){
+            for (i = 1; i < tr.length; i++) {
+                for (j = 0; j < howManyColumn ; j++) {
                     td = tr[i].getElementsByTagName("td")[j];
                     if (td) {
                         txtValue = td.textContent || td.innerText;
@@ -210,8 +211,8 @@ include '../conn.php';
                             tr[i].style.display = "none";
                         }
                     }
-                } 
-            }    
+                }
+            }
         }
     </script>
 </body>

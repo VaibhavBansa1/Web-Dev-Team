@@ -104,7 +104,7 @@ if (!(isset($_SESSION['id']) && $_SESSION['user'] == 'admin')) {
             </div>
 
             <div class="col-md-6">
-                <label for="faculty_id" class="form-label">Facutly ID</label>
+                <label for="faculty_id" class="form-label">Facutly Username</label>
                 <input type="text" class="form-control" id="faculty_id" name="faculty_id" required>
             </div>
             <div class="col-md-6">
