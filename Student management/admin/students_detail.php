@@ -51,9 +51,9 @@ include '../conn.php';
             </div>
             <div class="col-md-5 filter">
 
-                <span3>
+                <span>
                     <b>Filter by:</b> 
-                </span3>
+                </span>
                 <select name="session_id" id="search-by-session" class="btn btn-outline-dark">
                     <option value='' selected>Session and Year..</option>
                     <?php
@@ -95,7 +95,7 @@ include '../conn.php';
             </div>
             <div class="col-md-3 text-center">
 
-                <button type="submit" class="btn btn-outline-danger">Filter</button>
+                <button type="submit" class="btn btn-outline-danger">Search</button>
                 <a href="./students_detail.php">
                     <button type="button" class="btn btn-outline-danger">Show all student</button>
                 </a>

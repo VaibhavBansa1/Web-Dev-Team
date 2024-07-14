@@ -73,7 +73,7 @@ include '../conn.php';
                     ?>
                 </select>
     
-                <button type="submit" class="btn btn-outline-danger">Filter</button>
+                <button type="submit" class="btn btn-outline-danger">Search</button>
                 <a href="./faculty_detail.php">
                     <button type="button" class="btn btn-outline-danger">Show all faculty</button>
                 </a>
