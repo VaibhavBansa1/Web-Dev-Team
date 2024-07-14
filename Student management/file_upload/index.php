@@ -25,13 +25,13 @@
     }
     ?>
     <div class="text-center text-white pt-1 pb-1"  style="background-color: #e04747;">
-        <h1>Upload PVQ</h1>
+        <h1>Upload PYQ</h1>
     </div>
     <br><br>
     <div class="container p-6">
         <form action="upload.php" method="post" enctype="multipart/form-data">
             <div class="form-group">
-                <label for="subject" class="form-label">SubjSct:</label>
+                <label for="subject" class="form-label">Subject:</label>
                 <input type="text" class="form-control" id="subject" name="subject" required>
             </div>
             <div class="form-group">

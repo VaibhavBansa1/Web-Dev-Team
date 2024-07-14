@@ -43,13 +43,13 @@ include '../conn.php';
     <div class=" pt-2 pb-2">
         <form action="students_detail.php" method="get" class="row">
             <div class="col-md-4 text-center">
-                <b>Search by:</b>
-                <input type="text" id="myInput" onkeyup="filterTable()" placeholder="Roll no." class="search_box border border-dark">
+                <b>Search:</b>
+                <input type="text" id="myInput" onkeyup="filterTable()" placeholder="Search..." class="search_box border border-dark">
             </div>
             <div class="col-md-5 short">
 
                 <span3>
-                    <b>Short by:</b> 
+                    <b>Filter by:</b> 
                 </span3>
                 <select name="session_id" id="search-by-session" class="btn btn-outline-dark">
                     <option value='' selected>Session and Year..</option>
@@ -92,7 +92,7 @@ include '../conn.php';
             </div>
             <div class="col-md-3 text-center">
 
-                <button type="submit" class="btn btn-outline-danger">Short</button>
+                <button type="submit" class="btn btn-outline-danger">Filter</button>
                 <a href="./students_detail.php">
                    <button type="button" class="btn btn-outline-danger">Show all student</button>
                </a>
@@ -256,6 +256,7 @@ include '../conn.php';
                 } 
             }    
         }
+
     </script>
 </body>
 

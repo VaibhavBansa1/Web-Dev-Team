@@ -45,14 +45,14 @@ include '../conn.php';
         <form action="faculty_detail.php" method="get" class="row">
             <div class="col-md-4 ">
                 <b>Search by:</b>
-                <input type="text" id="myInput" onkeyup="filterTable()" placeholder="Roll no."
+                <input type="text" id="myInput" onkeyup="filterTable()" placeholder="Search..."
                     class="search_box border border-dark">
             </div>
 
             <div class="col-md-8 text-end">
 
                 <span>
-                    <b>Short by:</b>
+                    <b>Filter by:</b>
                 </span>
                 <select name="branch_id" id="search-by-branch" class="btn btn-outline-dark">
                     <option value='' selected>Branch..</option>
@@ -73,7 +73,7 @@ include '../conn.php';
                     ?>
                 </select>
     
-                <button type="submit" class="btn btn-outline-danger">Search</button>
+                <button type="submit" class="btn btn-outline-danger">Filter</button>
                 <a href="./faculty_detail.php">
                     <button type="button" class="btn btn-outline-danger">Show all faculty</button>
                 </a>
