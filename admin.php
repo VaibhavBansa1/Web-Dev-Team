@@ -25,8 +25,8 @@ $sql = "
         ('admin1', 'Vaibhav', 'password', 'vaibhav@gmail.com', '9109863175', '8109863175', 'Male', 'B+', 'Mall road, Opposite Police Station, Morar, Gwalior', '2000-01-01', 'sup_admin'),
         ('admin2', 'Sivam', 'password', 'sivam@gmail.com', '9109863132', '9109863182', 'Male', 'A-', 'Mall road, Opposite Police Station, Morar, Gwalior', '2001-02-03', 'sup_admin'),
         ('admin3', 'Keshav', 'password', 'keshav3@gmail.com', '8109864578', '9109863155', 'Male', 'B-', 'Mall road, Opposite Police Station, Morar, Gwalior', '2001-05-12', 'sup_admin');
-        Drop Database If Exists file_db;
-        
+
+    Drop Database If Exists file_db;
     CREATE TABLE files (
         id INT(11) AUTO_INCREMENT PRIMARY KEY,
         subject VARCHAR(255) NOT NULL,
